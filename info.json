@@ -1,0 +1,12 @@
+{
+  "name": "OCs_stone_casting",
+  "version": "0.6.3",
+  "title": "OCs Stone Casting",
+  "author": "OC1024",
+  "description": "Adds recipes to the foundry that uses lava for stone related products.",
+  "factorio_version": "2.0",
+  "dependencies": [
+    "base >= 2.0",
+    "space-age"
+  ]
+}

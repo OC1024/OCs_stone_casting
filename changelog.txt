@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.6.3
+Date: 2025-03-07
+  Other:
+    - dummy version
+---------------------------------------------------------------------------------------------------
+Version: 0.6.2
+Date: 2025-03-03
+  Changes:
+    - Use the only sane date format with ISO 8601.
+    - Set most settings to true by default.
+    - Reordered parts of the code, the user should not notice any difference.
+---------------------------------------------------------------------------------------------------
+Version: 0.6.1
+Date: 05. 2025-01
+  Bugfixes:
+    - Unhide stone-to-lava recipe by default. Factorio should hide it anyhow if not activated.
+---------------------------------------------------------------------------------------------------
+Version: 0.6.0
+Date: 2025-01-03
+  Major Features:
+    - Added a optional stone to lava recipe. Disabled by default due creating a loop.
+  Balancing:
+    - Made most of the recipes noticable faster.
+    - Set the fluidbox multiplier for the to 4, except for concrete which is 2.
+---------------------------------------------------------------------------------------------------
+Version: 0.5.1
+Date: 2025-01-01
+  Bugfixes:
+    - Added missing localisation lines.
+---------------------------------------------------------------------------------------------------
+Version: 0.5.0
+Date: 2025-01-01
+  Compatibility:
+    - Added a basic compatibility with AAI Industries.
+  Bugfixes:
+    - Unified localisation lines.
+---------------------------------------------------------------------------------------------------
+Version: 0.4.1
+Date: 2024-12-29
+  Balancing:
+    - Changed the stone recipe to match the other recipes better.
+---------------------------------------------------------------------------------------------------
+Version: 0.4.0
+Date: 2024-12-23
+  Major Features:
+    - Renaming mod to OCs stone casting. Making it into a standalone mod.
+  Bugfixes:
+    - Fixed localisation lines.
+  Balancing:
+    - Added an expensive mode which requires a calcite for any lava recipe.
+    - Scaled up most recipes. Ratios stayed the same, but this was required for a fitting calcite cost.
+---------------------------------------------------------------------------------------------------
+Version: 0.3.0
+Date: 2024-12-22
+  Major Features:
+    - Initial release.
+    - Added concrete and refined concrete from lava
+    - Added stone walls from lava
+    - Reworked backend: added prototypes/ folder
+  Minor Features:
+    - Unified icons for recipes and for technology
+---------------------------------------------------------------------------------------------------
+Version: 0.2.0
+Date: 2024-12-19
+  Major Features:
+    - Added foundation for foundries
+    - Added changelog and settings files
+  Minor Features:
+    - Added compatibility with foundation productivity mod
+---------------------------------------------------------------------------------------------------
+Version: 0.1.0
+Date: 2024-12-18
+  Major Features:
+    - Initial idea.
+    - English and German localisation.
