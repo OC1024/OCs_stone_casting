@@ -1,8 +1,12 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.6.3
-Date: 2025-03-07
+Date: 2025-04-06
+  Minor Features:
+    - Changed the icon code structure: reducing file size (to-do)
+    - Added sand-to-lava recipe if sand exists.
   Other:
-    - dummy version
+    - Introducing utils helper functions to simplify the code.
+    - Added dependency to "OCs_base_assets" mod for icons and code structure.
 ---------------------------------------------------------------------------------------------------
 Version: 0.6.2
 Date: 2025-03-03
