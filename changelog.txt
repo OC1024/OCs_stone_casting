@@ -1,8 +1,8 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.6.3
+Version: 0.7.0
 Date: 2025-04-06
   Minor Features:
-    - Changed the icon code structure: reducing file size (to-do)
+    - Changed the icon code structure: reducing file size
     - Added sand-to-lava recipe if sand exists.
   Other:
     - Introducing utils helper functions to simplify the code.
