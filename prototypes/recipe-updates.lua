@@ -3,16 +3,15 @@ if data.raw["item"]["sand"] then
     { -- lava to sand
       type = "recipe",
       name = "lava-to-sand-recipe",
-      icon = "__OCs_stone_casting__/graphics/icons/casting-sand.png", -- sand icon stolen from Kastorio2. 
       icons =
       {
         {
-          icon = "__OCs_stone_casting__/graphics/icons/sand.png",
+          icon = "__OCs_base_assets__/graphics/icons/sand.png", -- sand icon stolen from Kastorio2. 
           icon_size = 64,
           icon_mipmaps = 4,
         },
         {
-          icon = "__OCs_stone_casting__/graphics/icons/overlayer-recipe-lava-droplet.png",
+          icon = "__OCs_base_assets__/graphics/icons/overlayer-recipe-lava-droplet.png",
           icon_size = 64,
           icon_mipmaps = 4,
         }
@@ -34,7 +33,7 @@ if data.raw["item"]["sand"] then
       icon = "__OCs_stone_casting__/graphics/icons/lava-sand.png",
       icons = {
         {
-          icon = "__OCs_base_assets__/grapics/icons/sand.png", -- stolen from Kastorio2. I like that one better than the aai sand icon
+          icon = "__OCs_base_assets__/graphics/icons/sand.png", -- stolen from Kastorio2. I like that one better than the aai sand icon
           icon_size = 64,
           icon_mipmaps = 4,
         },
