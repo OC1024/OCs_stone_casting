@@ -68,7 +68,7 @@ end
 
 -- Inject the recipe unlock into the technology
 local mapping = {
-  ["lava-to-landfill-recipe"] = {"lava-to-landfil-tech"},
+  ["lava-to-landfill-recipe"] = {"lava-to-stone-tech"},
 }
 add_recipe_unlocks(mapping)
 

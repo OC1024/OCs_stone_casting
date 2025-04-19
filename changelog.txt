@@ -1,4 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.7.2
+Date: 2025-04-19
+  Bugfixes:
+    - lava-to-sand now unlocked with lava to stone tech
+    - sand-to-lava now has the correct icon.
+    - Made lava-to-landfill usable again.
+    - Fixed few AAI-Industry compatibility things nobody noticed.
+  Other:
+    - Updated dependency of my base mod.
+    - German localisation now has different word order.
+---------------------------------------------------------------------------------------------------
 Version: 0.7.1
 Date: 2025-04-06
   Bugfixes:
