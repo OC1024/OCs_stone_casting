@@ -19,5 +19,6 @@ local mapping = {
     ["casting-gate"]  = {"lava-to-stone-tech"}, -- test this out
     ["casting-stone-furnace"]  = {"lava-to-stone-tech"},
     ["casting-steel-furnace"]  = {"lava-to-stone-tech"},
+    ["casting-rail"]  = {"lava-to-stone-tech"},
   }
   add_recipe_unlocks(mapping)

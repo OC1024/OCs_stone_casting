@@ -74,6 +74,7 @@ local whitelist = {
   "steel-furnace",
   "stone-wall", -- test
   "gate",
+  "rail"
   -- extend as needed
 }
 if data.raw["item"]["sand"] then

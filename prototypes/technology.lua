@@ -5,7 +5,7 @@ data:extend({
     icon = "__OCs_stone_casting__/graphics/icons/lava-stone.png",
 		icon_size = 64,
     icon_mipmaps = 4,
-    prerequisites = {"foundry"},
+    prerequisites = {"foundry","gate","railway"},
     unit = {
       ingredients = {
         {"automation-science-pack", 1},
