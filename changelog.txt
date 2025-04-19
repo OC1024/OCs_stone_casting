@@ -7,7 +7,6 @@ Date: 2025-04-19
     - Made lava-to-landfill usable again.
     - Fixed few AAI-Industry compatibility things nobody noticed.
   Other:
-    - Updated dependency of my base mod.
     - German localisation now has different word order.
 ---------------------------------------------------------------------------------------------------
 Version: 0.7.1

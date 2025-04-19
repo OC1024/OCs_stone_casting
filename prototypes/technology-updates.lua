@@ -12,12 +12,3 @@ if data.raw["item"]["sand"] then
     end
 end
 
-
--- Inject the recipe unlock into the technology
-local mapping = {
-    ["casting-stone-wall"]  = {"lava-to-stone-tech"}, -- alt recipe to "lava-to-wall-recipe"
-    ["casting-gate"]  = {"lava-to-stone-tech"}, -- test this out
-    ["casting-stone-furnace"]  = {"lava-to-stone-tech"},
-    ["casting-steel-furnace"]  = {"lava-to-stone-tech"},
-  }
-  add_recipe_unlocks(mapping)

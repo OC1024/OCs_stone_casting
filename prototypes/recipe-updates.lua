@@ -62,21 +62,3 @@ if data.raw["item"]["sand"] then
     },
   })
 end
-
--- used the casting-generator
-local whitelist = {
-  "stone", -- test
-  "stone-brick", --test
-  "concrete", -- test
-  "refined-concrete", -- test
-  -- "foundation",
-  "stone-furnace",
-  "steel-furnace",
-  "stone-wall", -- test
-  "gate",
-  -- extend as needed
-}
-if data.raw["item"]["sand"] then
-  table.insert(whitelist, "sand")
-end
-batch_generate_castings(whitelist)
