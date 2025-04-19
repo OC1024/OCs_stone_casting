@@ -45,6 +45,7 @@ data:extend({
         {type = "fluid", name = "lava", amount = 250},
       },
       allow_productivity = false,
+      show_amount_in_title =false,
     },
     { -- lava to brick
       type = "recipe",
