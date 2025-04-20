@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.7.3
+Date: 2025-04-20
+  Compatibility:
+    - Added the productivity bonus from the mod "concrete productivity" to both concrete casting recipes.
+---------------------------------------------------------------------------------------------------
 Version: 0.7.2
 Date: 2025-04-19
   Bugfixes:
@@ -85,7 +90,7 @@ Date: 2024-12-19
   Major Features:
     - Added foundation for foundries
     - Added changelog and settings files
-  Minor Features:
+  Compatibility:
     - Added compatibility with foundation productivity mod
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.0
