@@ -29,7 +29,5 @@ if casting_materials then
     end
 end
 
-require("__OCs_base_assets__.prototypes.utils.casting-generator")
-
 require("prototypes.recipe-updates")
 require("prototypes.technology-updates")

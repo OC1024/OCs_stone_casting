@@ -1,11 +1,11 @@
 if data.raw["item"]["sand"] then
-    mapping = {
+    local mapping = {
         ["lava-to-sand-recipe"] = {"lava-to-stone-tech"},
     }
     add_recipe_unlocks(mapping)
     -- additional condition
     if settings.startup["allow-stone-to-lava"].value then
-        mapping = {
+        local mapping = {
             ["sand-to-lava-recipe"] = {"lava-to-stone-tech"}
         }
         add_recipe_unlocks(mapping)
@@ -15,10 +15,10 @@ end
 
 -- Inject the recipe unlock into the technology
 local mapping = {
-    ["casting-stone-wall"]  = {"lava-to-stone-tech"}, -- alt recipe to "lava-to-wall-recipe"
+    -- ["casting-stone-wall"]  = {"lava-to-stone-tech"}, -- alt recipe to "lava-to-wall-recipe"
     ["casting-gate"]  = {"lava-to-stone-tech"}, -- test this out
     ["casting-stone-furnace"]  = {"lava-to-stone-tech"},
     ["casting-steel-furnace"]  = {"lava-to-stone-tech"},
-    ["casting-rail"]  = {"lava-to-stone-tech"},
-  }
-  add_recipe_unlocks(mapping)
+    -- ["casting-rail"]  = {"lava-to-stone-tech"},
+}
+add_recipe_unlocks(mapping)

@@ -5,6 +5,8 @@ Date: 2025-04-19
     - Added rails and gates to the castable items. Unlocked by lava to stone tech. Added gates and railway as prerequisit techs to avoid cheesing them.
   Other:
     - Updated dependency of my base mod.
+  Compatibility:
+    - Added compatibility with "Concrete Productivity" mod.
 ---------------------------------------------------------------------------------------------------
 Version: 0.7.2
 Date: 2025-04-19
