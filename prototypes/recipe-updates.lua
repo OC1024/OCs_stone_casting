@@ -53,10 +53,6 @@ end
 
 -- used the casting-generator
 local whitelist = {
-  -- "stone", -- test
-  -- "stone-brick", --test
-  -- "concrete", -- test
-  -- "refined-concrete", -- test
   -- "foundation",
   "stone-furnace",
   "steel-furnace",

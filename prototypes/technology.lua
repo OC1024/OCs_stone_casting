@@ -19,7 +19,8 @@ data:extend({
     effects = {
      {type = "unlock-recipe", recipe = "lava-to-stone-recipe"},
      {type = "unlock-recipe", recipe = "lava-to-brick-recipe"},
-    --  {type = "unlock-recipe", recipe = "lava-to-wall-recipe"}
+    --  {type = "unlock-recipe", recipe = "lava-to-wall-recipe"},
+    {type = "unlock-recipe", recipe = "casting-rail"}
     },
     --  order = "a"
   },
