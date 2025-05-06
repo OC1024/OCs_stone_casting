@@ -1,6 +1,12 @@
 if mods["aai-industry"] then
   require("prototypes.compatibility.aai-industry")
 end
+if mods["concrete-productivity"] then
+  require("prototypes.compatibility.concrete-productivity")
+end
+if mods["foundation-productivity"] then
+  require("prototypes.compatibility.concrete-productivity")
+end
 
 
 alternative_recipes = alternative_recipes or {}
@@ -31,3 +37,7 @@ end
 
 require("prototypes.recipe-updates")
 require("prototypes.technology-updates")
+
+if mods["metal-and-stars"] then
+  require("prototypes.compatibility.metal-and-stars") -- prod bonus for casting rail
+end

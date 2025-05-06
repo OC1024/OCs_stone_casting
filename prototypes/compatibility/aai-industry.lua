@@ -1,7 +1,3 @@
-if not mods["aai-industry"] then
-    return
-end
-
 log("Overriding concrete recipes from this mod, such that it is alingt with AAI Industry.")
 data:extend({
     { -- lava-to-stone-wall-recipe
@@ -97,7 +93,7 @@ replace_multiple_recipes((recipe_modifications)) -- do all replacements at once 
 
 
 -- remove normal lava-to-stone recipes lava-to stone tech
-remove_recipes_from_tech("lava-to-stone-tech", {"lava-to-stone-wall","lava-to-steel-wall"})
+remove_recipes_from_tech("casting-wall-tech", {"lava-to-stone-wall","lava-to-steel-wall"})
 
 -- Add the lava-to-wall recipes to the corresponding wall technologies
 mapping  = {

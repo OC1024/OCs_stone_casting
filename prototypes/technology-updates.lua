@@ -16,7 +16,7 @@ end
 -- Inject the recipe unlock into the technology
 local mapping = {
     -- ["casting-stone-wall"]  = {"lava-to-stone-tech"}, -- alt recipe to "lava-to-wall-recipe"
-    ["casting-gate"]  = {"lava-to-stone-tech"}, -- test this out
+    ["casting-gate"]  = {"casting-wall-tech"},
     ["casting-stone-furnace"]  = {"lava-to-stone-tech"},
     ["casting-steel-furnace"]  = {"lava-to-stone-tech"},
     -- ["casting-rail"]  = {"lava-to-stone-tech"},

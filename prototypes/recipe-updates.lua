@@ -31,18 +31,6 @@ if data.raw["item"]["sand"] then
       type = "recipe",
       name = "sand-to-lava-recipe",
       icon = "__OCs_stone_casting__/graphics/icons/lava-sand.png",
-      -- icons = {
-      --   {
-      --     icon = "__OCs_base_assets__/graphics/icons/sand.png", -- stolen from Kastorio2. I like that one better than the aai sand icon
-      --     icon_size = 64,
-      --     icon_mipmaps = 4,
-      --   },
-      --   {
-      --     icon = "__OCs_base_assets__/graphics/icons/overlayer-recipe-lava-droplet.png",
-      --     icon_size = 64,
-      --     icon_mipmaps = 4,
-      --   }
-      -- },
       icon_size = 64,
       icon_mipmaps = 4,
       category = "metallurgy",
@@ -80,4 +68,4 @@ local whitelist = {
 if data.raw["item"]["sand"] then
   table.insert(whitelist, "sand")
 end
-batch_generate_castings(whitelist)
+batch_generator(whitelist)

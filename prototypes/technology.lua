@@ -5,7 +5,7 @@ data:extend({
     icon = "__OCs_stone_casting__/graphics/icons/lava-stone.png",
 		icon_size = 64,
     icon_mipmaps = 4,
-    prerequisites = {"foundry","gate","railway"},
+    prerequisites = {"foundry","railway"},
     unit = {
       ingredients = {
         {"automation-science-pack", 1},
@@ -19,7 +19,7 @@ data:extend({
     effects = {
      {type = "unlock-recipe", recipe = "lava-to-stone-recipe"},
      {type = "unlock-recipe", recipe = "lava-to-brick-recipe"},
-     {type = "unlock-recipe", recipe = "lava-to-wall-recipe"}
+    --  {type = "unlock-recipe", recipe = "lava-to-wall-recipe"}
     },
     --  order = "a"
   },
@@ -54,6 +54,40 @@ data:extend({
       effects = {
        {type = "unlock-recipe", recipe = "casting-concrete-recipe"},
        {type = "unlock-recipe", recipe = "casting-refined-concrete-recipe"}
+      },
+  },
+  { -- casting wall + gate
+    type = "technology",
+    name = "casting-wall-tech",
+    icons = 
+    {
+      {
+        icon = "__base__/graphics/technology/stone-wall.png",
+        icon_size = 256,
+        icon_mipmaps = 4,
+      },
+      {
+        icon = "__OCs_stone_casting__/graphics/icons/overlayer-recipe-lava-droplet.png",
+        icon_size = 64,
+        icon_mipmaps = 4,
+        icon_scale = 4,
+      }
+    },
+    prerequisites = {"lava-to-stone-tech","gate"},
+    unit =
+    {
+      ingredients = {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"military-science-pack", 2}
+      },
+      time = 45,
+      count = 300
+      },
+      effects = {
+       {type = "unlock-recipe", recipe = "lava-to-wall-recipe"},
+      --  {type = "unlock-recipe", recipe = "casting-gate"} -- will be added in data-lua stage
       },
   }
 })
