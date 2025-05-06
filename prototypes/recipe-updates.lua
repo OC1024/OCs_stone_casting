@@ -53,13 +53,12 @@ end
 
 -- used the casting-generator
 local whitelist = {
-  -- "foundation",
-  "stone-furnace",
-  "steel-furnace",
-  -- "stone-wall", -- test
-  "gate",
-  "rail"
-  -- extend as needed
+  -- ["foundation"] = "metallurgy",
+  ["stone-furnace"] = "metallurgy",
+  ["steel-furnace"] = "metallurgy",
+  -- ["stone-wall"] = "metallurgy", -- test
+  ["gate"] = "metallurgy",
+  ["rail"] = "metallurgy",
 }
 if data.raw["item"]["sand"] then
   table.insert(whitelist, "sand")
