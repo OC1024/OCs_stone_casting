@@ -4,7 +4,7 @@ if settings.startup["expensive-lava-mode"].value then
   local recipes_to_update = {
     "lava-to-stone-recipe",
     "lava-to-brick-recipe",
-    "lava-to-walls-recipe",
+    "lava-to-wall-recipe",
     "casting-concrete-recipe",
     "casting-refined-concrete-recipe",
     "casting-foundation-recipe",
@@ -12,12 +12,12 @@ if settings.startup["expensive-lava-mode"].value then
     "casting-steel-furnace",
     "casting-rail",
     "casting-wall",
-    "lava-to-stone-wall-recipe",
-    "casting-concrete-wall",
-    "lava-to-steel-wall-recipe",
     "casting-gate",
     "lava-to-sand-recipe",
-    "sand-to-lava-recipe",
+    -- aai-industry
+    "casting-stone-wall",
+    "casting-concrete-wall",
+    "casting-steel-wall",
   }
 
   for _, recipe_name in pairs(recipes_to_update) do

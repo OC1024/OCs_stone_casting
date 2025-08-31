@@ -1,15 +1,21 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.8.0
-Date: 2025-04-19
+Date: 2025-08-29
   Minor Features:
     - Added rails and gates to the castable items. Added railway as prerequisit techs to avoid cheesing rails.
     - Added technology for casting walls and gates.
     - Added casting of stone and steel furncances. In case you need hundreds of stone furncances in the late game.
+  Changes:
+    - In complex mode, sand-to-lava now does not require a calcite anymore.
+    - In complex mode, lava-to-stone now requires calcite.
+    - Updated dependency to OCs_base_assets 0.3.0
   Other:
-    - Updated dependency of my base mod.
+    - Rearranging mod files and use more of my base assets mod
   Compatibility:
+    - With "AAI Industry", lava-to-walls tech now requires steel walls tech, but unlocks all wall recipes.
     - Added compatibility with "Concrete Productivity" mod.
     - Added small combatibility with "Metal and Stars" mod. only the casting rail recipe is affected.
+    - Started adding compatibility with "Kastorio 2 Spaced out" mod. Sand, quatz and glass are supported now.
 ---------------------------------------------------------------------------------------------------
 Version: 0.7.2
 Date: 2025-04-19
