@@ -3,7 +3,7 @@ if data.raw["item"]["sand"] then
   data:extend({
     { -- lava to sand
       type = "recipe",
-      name = "lava-to-sand-recipe",
+      name = "lava-to-sand",
       icons =
       {
         {
@@ -19,7 +19,7 @@ if data.raw["item"]["sand"] then
       },
       category = "metallurgy",
       enabled = false,
-      energy_required = 24+20, --24 for 40 stone, 0.5*40 grinding sand
+      energy_required = 24, --24 for 40 stone, 0.5*40 grinding sand (free)
       ingredients = {
         {type = "fluid", name = "lava", amount = 400, fluidbox_multiplier = 4}, -- 40 stone
       },
@@ -30,7 +30,7 @@ if data.raw["item"]["sand"] then
     },
     { -- sand to lava
       type = "recipe",
-      name = "sand-to-lava-recipe",
+      name = "sand-to-lava",
       icon = "__OCs_stone_casting__/graphics/icons/lava-sand.png",
       icon_size = 64,
       icon_mipmaps = 4,
@@ -41,10 +41,10 @@ if data.raw["item"]["sand"] then
       enabled = false,
       energy_required = 32, --twice as fast as stone-to-lava since sand is smaller
       ingredients = {
-        {type = "item", name = "sand", amount = 80, itembox_multiplyer = 4}, -- 2sand per stone
+        {type = "item", name = "sand", amount = 100, itembox_multiplyer = 4}, -- 2sand per stone
       },
       results = {
-        {type = "fluid", name = "lava", amount = 200, fluidbox_multiplier = 4}, -- 40stone/2 making it less efficient
+        {type = "fluid", name = "lava", amount = 250, fluidbox_multiplier = 4}, -- 40stone/2 making it less efficient
       },
       allow_productivity = false,
       show_amount_in_title =false,
@@ -52,7 +52,7 @@ if data.raw["item"]["sand"] then
   })
 end
 
--- data:extend({
+--[[ data:extend({
 --     { -- lava-to-stone-wall-recipe
 --         type = "recipe",
 --         name = "lava-to-stone-wall-recipe",
@@ -143,6 +143,7 @@ end
 --     }
 -- }
 -- replace_multiple_recipes((recipe_modifications)) -- do all replacements at once with the helper function
+--]]
 
 -- new code utilizing my generator
 -- pepare the generator
@@ -156,24 +157,32 @@ generator_api.register_category_alt_recipes("metallurgy",alt_dict)
 
 -- create new recipes
 local casting_dict = {
-    ["stone-wall"] = "metallurgy",
+    ["stone-wall"] = "metallurgy", -- overwrite vanilla version
     ["concrete-wall"] = "metallurgy",
     ["steel-wall"] = "metallurgy",
     ["stone-tablet"] = "metallurgy",
+    ["glass"] = "metallurgy",
 }
 generator_api.batch_generator(casting_dict)
 
 -- remove and add recipes from techs
 add_prerequisite("casting-wall-tech", "steel-walls")
-remove_recipes_from_tech("casting-wall-tech", {"lava-to-wall-recipe"})
+-- remove_recipes_from_tech("casting-wall-tech", {"lava-to-wall"}) -- doesn't exist anymore
 
 -- add recipes to technology
 mapping  = {
-    -- ["lava-to-wall-recipe"] = {"casting-wall-tech"}, -- already there
-    ["casting-stone-wall"] = {"casting-wall-tech"},
+    -- ["lava-to-wall"] = {"casting-wall-tech"}, -- old name
+    ["casting-stone-wall"] = {"casting-wall-tech"}, -- already there
     ["casting-concrete-wall"] = {"casting-wall-tech"},
     ["casting-steel-wall"] = {"casting-wall-tech"},
     ["casting-stone-tablet"] = {"foundry"},
+    ["casting-glass"] = {"glass-processing"}, --aai tech
 }
 add_recipe_unlocks(mapping)
+if settings.startup["allow-stone-to-lava"].value then
+  local mapping = {
+    ["sand-to-lava"] = {"lava-to-stone-tech"}
+  }
+  add_recipe_unlocks(mapping)
+end
 log("Changed techs due to AAI Industry being active.")

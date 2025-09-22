@@ -1,7 +1,7 @@
 data:extend({
   { -- lava to stone
     type = "recipe",
-    name = "lava-to-stone-recipe",
+    name = "lava-to-stone",
     icons =
     {
       {
@@ -29,7 +29,7 @@ data:extend({
   },
   { -- stone to lava
     type = "recipe",
-    name = "stone-to-lava-recipe",
+    name = "stone-to-lava",
     icon = "__OCs_stone_casting__/graphics/icons/lava-stone.png",
     icon_size = 64, icon_mipmaps = 4,
     category = "metallurgy",
@@ -49,7 +49,7 @@ data:extend({
   },
   { -- lava to brick
     type = "recipe",
-    name = "lava-to-brick-recipe",
+    name = "lava-to-brick",
     icons =
     {
       {
@@ -65,7 +65,7 @@ data:extend({
     },
     category = "metallurgy",
     enabled = false,
-    energy_required = 12, -- like liquid-metal-to-metal:  2stone to 1brick but 20x volume. new time: 20x0.6=12
+    energy_required = 24, -- like liquid-metal-to-metal:  2stone to 1brick but 20x volume. new time: 20x0.6=12
     ingredients = {
       {type = "fluid", name = "lava", amount = 400, fluidbox_multiplier = 4}
     },
@@ -264,11 +264,11 @@ local generator_api = require("__OCs_base_assets__.prototypes.utils.api")
 
 -- create new recipes
 local casting_dict = {
-  ["wall"] = "metallurgy",
+  ["stone-wall"] = "metallurgy",
   ["concrete"] = "metallurgy",
   ["refined-concrete"] = "metallurgy",
   ["landfill"] = "metallurgy",
-  ["foundation"] = "metallurgy",
+  ["foundation"] = "metallurgy", -- please add surface_conditions pressure = 400 (Vulcanus only)
   ["stone-furnace"] = "metallurgy",
   ["steel-furnace"] = "metallurgy",
   ["gate"] = "metallurgy",

@@ -2,22 +2,24 @@
 if settings.startup["expensive-lava-mode"].value then
   -- List of recipes to modify
   local recipes_to_update = {
-    "lava-to-stone-recipe",
-    "lava-to-brick-recipe",
-    "lava-to-wall-recipe",
-    "casting-concrete-recipe",
-    "casting-refined-concrete-recipe",
-    "casting-foundation-recipe",
+    "lava-to-stone",
+    "lava-to-brick",
+    "lava-to-wall", -- old name
+    "casting-concrete",
+    "casting-refined-concrete",
+    "casting-landfill",
+    "casting-foundation",
     "casting-stone-furnace", -- seems a bit to expensive to add 1 calcite for 5 stone. Usually 1 calcite for 50 stone.
     "casting-steel-furnace",
     "casting-rail",
     "casting-wall",
     "casting-gate",
-    "lava-to-sand-recipe",
+    "lava-to-sand",
     -- aai-industry
     "casting-stone-wall",
     "casting-concrete-wall",
     "casting-steel-wall",
+    -- krastorio2
   }
 
   for _, recipe_name in pairs(recipes_to_update) do
