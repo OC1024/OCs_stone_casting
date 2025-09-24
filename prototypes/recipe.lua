@@ -268,7 +268,7 @@ local casting_dict = {
   ["concrete"] = "metallurgy",
   ["refined-concrete"] = "metallurgy",
   ["landfill"] = "metallurgy",
-  ["foundation"] = "metallurgy", -- please add surface_conditions pressure = 400 (Vulcanus only)
+  ["foundation"] = "metallurgy", -- please add surface_conditions pressure = 4000 (Vulcanus only)
   ["stone-furnace"] = "metallurgy",
   ["steel-furnace"] = "metallurgy",
   ["gate"] = "metallurgy",

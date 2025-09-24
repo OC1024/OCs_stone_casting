@@ -14,10 +14,13 @@ local new_alt_recipes = {
 }
 generator_api.register_category_alt_recipes("metallurgy", new_alt_recipes)
 
+-- remove stone from blacklist, as we can make it from lava now
+generator_api.unregister_item_blacklist("metallurgy", {"stone"})
+
 -- overwrite with new order
 local  overwrite_alt_recipes = {
-    ["concrete"] = {"casting-concrete-recipe","concrete-from-molten-iron","concrete",},
-    ["refined-concrete"] = {"casting-refined-concrete-recipe","refined-concrete",},
+    ["concrete"] = {"casting-concrete","concrete-from-molten-iron","concrete",},
+    ["refined-concrete"] = {"casting-refined-concrete","refined-concrete",},
 }
 generator_api.overwrite_category_alt_recipes("metallurgy",overwrite_alt_recipes)
 

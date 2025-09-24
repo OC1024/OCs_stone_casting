@@ -155,6 +155,11 @@ local alt_dict = {
 }
 generator_api.register_category_alt_recipes("metallurgy",alt_dict)
 
+local new_alt_recipes = {
+  ["sand"] = {"lava-to-sand","sand"},
+}
+generator_api.register_category_alt_recipes("metallurgy", new_alt_recipes)
+
 -- create new recipes
 local casting_dict = {
     ["stone-wall"] = "metallurgy", -- overwrite vanilla version
@@ -176,7 +181,7 @@ mapping  = {
     ["casting-concrete-wall"] = {"casting-wall-tech"},
     ["casting-steel-wall"] = {"casting-wall-tech"},
     ["casting-stone-tablet"] = {"foundry"},
-    ["casting-glass"] = {"glass-processing"}, --aai tech
+    ["casting-glass"] = {"lava-to-stone-tech"},
 }
 add_recipe_unlocks(mapping)
 if settings.startup["allow-stone-to-lava"].value then

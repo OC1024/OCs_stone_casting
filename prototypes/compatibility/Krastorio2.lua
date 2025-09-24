@@ -18,7 +18,7 @@ data:extend({
     },
     category = "metallurgy",
     enabled = false,
-    energy_required = 24,                                                       --24 for 40 stone, 0.5*40 grinding sand (free)
+    energy_required = 24, --24 for 40 stone, 0.5*40 grinding sand (free)
     ingredients = {
       { type = "fluid", name = "lava", amount = 400, fluidbox_multiplier = 4 }, -- 40 stone
     },
@@ -39,7 +39,7 @@ data:extend({
     subgroup = "vulcanus-processes",
     order = "a[melting]-a[lava-c]",
     enabled = false,
-    energy_required = 32,                                                        --twice as fast as stone-to-lava since sand is smaller
+    energy_required = 32, --twice as fast as stone-to-lava since sand is smaller
     ingredients = {
       { type = "item", name = "kr-sand", amount = 100, itembox_multiplyer = 4 }, -- 2.5sand per stone
     },
@@ -70,7 +70,7 @@ data:extend({
     icon_mipmaps = 4,
     category = "metallurgy",
     enabled = false,
-    energy_required = 40, -- 0.6s*40 lava-to-sand, 2.1s*8 filtration = 40.8 (rounded to 60 to be nice)
+    energy_required = 40, -- 0.6s*40 lava-to-sand, 2.1s*8 filtration = 40.8 (rounded to 40 to be nice)
     ingredients = {
       { type = "fluid", name = "lava",    amount = 400, fluidbox_multiplier = 2 },
       { type = "item",  name = "calcite", amount = 1 }, -- automatically my "complex mode"
@@ -100,7 +100,7 @@ data:extend({
     icon_mipmaps = 4,
     category = "metallurgy",
     enabled = false,
-    energy_required = 64, -- 0.6s*40 lava-to-stone, 0.5*40 grinding sand(free), 2.1s*8 filtration, 16s*1.5smelting quartz = 84,8 (also rounded down)
+    energy_required = 64, -- 0.6s*40 lava-to-stone, 0.5*40 grinding sand(free), 2.1s*8 filtration, 16s*1.5smelting quartz = 64,8 (also rounded down)
     ingredients = {
       { type = "fluid", name = "lava",    amount = 400, fluidbox_multiplier = 2 },
       { type = "item",  name = "calcite", amount = 1 }, -- automatically my "complex mode"
@@ -112,7 +112,6 @@ data:extend({
   },
 })
 
-
 -- 1. pepare the Generator
 local generator_api = require("__OCs_base_assets__.prototypes.utils.api")
 -- register new recipes to Generator
@@ -122,7 +121,7 @@ local new_alt_recipes = {
   ["kr-quartz"] = { "lava-to-quartz", "kr-quarz" },
   ["kr-silicon"] = { "lava-to-silicon", "kr-silicon" },
 }
-generator_api.register_category_alt_recipes(new_alt_recipes, "metallurgy") -- check if correct usage
+generator_api.register_category_alt_recipes("metallurgy", new_alt_recipes) -- check if correct usage
 
 -- 2. Execute the Generator.
 local casting_dict = {
@@ -135,30 +134,29 @@ generator_api.batch_generator(casting_dict)
 
 -- 3. Add Recipes to Techs
 local recipe_tech_mapping = {
-  ["casting-kr-glass"] = { "glass-processing", "kr-stone-processing" }, -- aai tech, K2 tech.
+  ["casting-kr-glass"] = { "lava-to-stone-tech" },
 }
 add_recipe_unlocks(recipe_tech_mapping)
 
 data:extend({
   -- create new K2 technology
-  {
+  {-- advanced-mineral-processing (quartz and silicon from lava)
     type = "technology",
     name = "kr-advanced-mineral-processing-tech",
     icons =
     {
       {
-        icon = "__Space_Age__/icons/technology/foundry.png",
+        icon = "__space-age__/graphics/technology/foundry.png",
         icon_size = 256,
         icon_mipmaps = 4,
       },
       {
-        icon = "__OCs_base_assets__/graphics/icons/overlayer-tech-kr-silicon.png",
+        icon = "__OCs_base_assets__/graphics/technology/overlayer-tech-kr-silicon.png",
         icon_size = 256,
         icon_mipmaps = 4,
-        icon_scale = 4,
       }
     },
-    prerequisites = { "lava-to-stone-tech", "silicon-processing","metallurgic-science-pack","production-science-pack"},
+    prerequisites = { "lava-to-stone-tech", "kr-silicon-processing","metallurgic-science-pack","production-science-pack"},
     unit =
     {
       ingredients = {
