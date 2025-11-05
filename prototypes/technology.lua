@@ -5,7 +5,7 @@ data:extend({
     icon = "__OCs_stone_casting__/graphics/icons/lava-stone.png",
     icon_size = 64,
     icon_mipmaps = 4,
-    prerequisites = { "foundry", "railway" },
+    prerequisites = { "foundry", "railway","landfill","advanced-material-processing" },
     unit = {
       ingredients = {
         { "automation-science-pack", 1 },
@@ -18,7 +18,7 @@ data:extend({
     },
     effects = {
       { type = "unlock-recipe", recipe = "lava-to-stone" },
-      { type = "unlock-recipe", recipe = "lava-to-brick" },
+      { type = "unlock-recipe", recipe = "lava-to-stone-brick" },
       { type = "unlock-recipe", recipe = "casting-rail" },
       { type = "unlock-recipe", recipe = "casting-landfill" },
       { type = "unlock-recipe", recipe = "casting-stone-furnace" },

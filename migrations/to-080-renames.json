@@ -1,8 +1,0 @@
-{
-  "recipe": [
-    ["lava-to-stone-wall-recipe", "casting-stone-walls"],
-    ["lava-to-wall-recipe", "casting-concrete-walls"],
-    ["lava-to-steel-wall-recipe", "casting-steel-walls"],
-    ["lava-to-sand-recipe", "casting-sand"]
-  ]
-}

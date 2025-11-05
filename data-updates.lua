@@ -15,5 +15,5 @@ if mods["concrete-productivity"] then
   require("prototypes.compatibility.concrete-productivity")
 end
 if mods["foundation-productivity"] then
-  require("prototypes.compatibility.concrete-productivity")
+  require("prototypes.compatibility.foundation-productivity")
 end

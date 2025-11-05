@@ -26,7 +26,8 @@ if data.raw["item"]["sand"] then
       results = {
         {type = "item", name = "sand", amount = 80}, -- 2sand per stone
       },
-      allow_productivity = false,
+      allow_productivity = true,
+      show_amount_in_title =false,
     },
     { -- sand to lava
       type = "recipe",
@@ -39,7 +40,7 @@ if data.raw["item"]["sand"] then
       subgroup= "vulcanus-processes",
       order = "a[melting]-a[lava-c]",
       enabled = false,
-      energy_required = 32, --twice as fast as stone-to-lava since sand is smaller
+      energy_required = 16, --twice as fast as stone-to-lava since sand is smaller
       ingredients = {
         {type = "item", name = "sand", amount = 100, itembox_multiplyer = 4}, -- 2sand per stone
       },
@@ -150,10 +151,6 @@ end
 local generator_api = require("__OCs_base_assets__.prototypes.utils.api")
 
 -- add new alterative recipes for the generator to use
-local alt_dict = {
-    ["sand"] = {"lava-to-sand-recipe", "sand"},
-}
-generator_api.register_category_alt_recipes("metallurgy",alt_dict)
 
 local new_alt_recipes = {
   ["sand"] = {"lava-to-sand","sand"},
@@ -162,26 +159,28 @@ generator_api.register_category_alt_recipes("metallurgy", new_alt_recipes)
 
 -- create new recipes
 local casting_dict = {
-    ["stone-wall"] = "metallurgy", -- overwrite vanilla version
-    ["concrete-wall"] = "metallurgy",
-    ["steel-wall"] = "metallurgy",
-    ["stone-tablet"] = "metallurgy",
-    ["glass"] = "metallurgy",
+  ["stone-wall"] = "metallurgy", -- overwrite vanilla version
+  ["concrete-wall"] = "metallurgy",
+  ["steel-wall"] = "metallurgy",
+  ["stone-tablet"] = "metallurgy",
+  ["glass"] = "metallurgy",
 }
 generator_api.batch_generator(casting_dict)
 
 -- remove and add recipes from techs
 add_prerequisite("casting-wall-tech", "steel-walls")
+add_prerequisite("casting-wall-tech", "casting-concrete-tech") -- since the concrete wall needs concrete
 -- remove_recipes_from_tech("casting-wall-tech", {"lava-to-wall"}) -- doesn't exist anymore
 
 -- add recipes to technology
-mapping  = {
-    -- ["lava-to-wall"] = {"casting-wall-tech"}, -- old name
-    ["casting-stone-wall"] = {"casting-wall-tech"}, -- already there
-    ["casting-concrete-wall"] = {"casting-wall-tech"},
-    ["casting-steel-wall"] = {"casting-wall-tech"},
-    ["casting-stone-tablet"] = {"foundry"},
-    ["casting-glass"] = {"lava-to-stone-tech"},
+local mapping  = {
+  ["lava-to-sand"] = {"lava-to-stone-tech"},
+  -- ["lava-to-wall"] = {"casting-wall-tech"}, -- old name
+  ["casting-stone-wall"] = {"casting-wall-tech"}, -- already there
+  ["casting-concrete-wall"] = {"casting-wall-tech"},
+  ["casting-steel-wall"] = {"casting-wall-tech"},
+  ["casting-stone-tablet"] = {"foundry"},
+  ["casting-glass"] = {"lava-to-stone-tech"},
 }
 add_recipe_unlocks(mapping)
 if settings.startup["allow-stone-to-lava"].value then
@@ -190,4 +189,3 @@ if settings.startup["allow-stone-to-lava"].value then
   }
   add_recipe_unlocks(mapping)
 end
-log("Changed techs due to AAI Industry being active.")

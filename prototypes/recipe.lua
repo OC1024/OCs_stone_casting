@@ -37,19 +37,19 @@ data:extend({
     subgroup= "vulcanus-processes",
     order = "a[melting]-a[lava-c]",
     enabled = false,
-    energy_required = 64, -- 1 stone = 10 liquid. new time: 0.6
+    energy_required = 32, -- like melting ores
     ingredients = {
       {type = "item", name = "stone", amount = 50},
     },
     results = {
-      {type = "fluid", name = "lava", amount = 250},
+      {type = "fluid", name = "lava", amount = 250}, -- halfed to reduce positive feedback
     },
     allow_productivity = false,
     show_amount_in_title =false,
   },
   { -- lava to brick
     type = "recipe",
-    name = "lava-to-brick",
+    name = "lava-to-stone-brick",
     icons =
     {
       {
@@ -275,3 +275,5 @@ local casting_dict = {
   ["rail"] = "metallurgy",
 }
 generator_api.batch_generator(casting_dict)
+
+data.raw.recipe["casting-foundation"].surface_conditions = {{property= "pressure", min=4000, max = 4000}} -- Vulcanus only

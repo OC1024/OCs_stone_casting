@@ -25,7 +25,8 @@ data:extend({
     results = {
       { type = "item", name = "kr-sand", amount = 100 }, -- 2.5sand per stone (7-8 sand from 3 stone)
     },
-    allow_productivity = false,
+    allow_productivity = true,
+    show_amount_in_title =false,
   },
   -- overwrite kr-sand to lava
   { -- kr-sand to lava
@@ -39,7 +40,7 @@ data:extend({
     subgroup = "vulcanus-processes",
     order = "a[melting]-a[lava-c]",
     enabled = false,
-    energy_required = 32, --twice as fast as stone-to-lava since sand is smaller
+    energy_required = 16, --twice as fast as stone-to-lava since sand is smaller
     ingredients = {
       { type = "item", name = "kr-sand", amount = 100, itembox_multiplyer = 4 }, -- 2.5sand per stone
     },
@@ -72,13 +73,14 @@ data:extend({
     enabled = false,
     energy_required = 40, -- 0.6s*40 lava-to-sand, 2.1s*8 filtration = 40.8 (rounded to 40 to be nice)
     ingredients = {
-      { type = "fluid", name = "lava",    amount = 400, fluidbox_multiplier = 2 },
+      { type = "fluid", name = "lava", amount = 400, fluidbox_multiplier = 2 },
       { type = "item",  name = "calcite", amount = 1 }, -- automatically my "complex mode"
     },
     results = {
       { type = "item", name = "kr-quartz", amount = 48 }, --80 sand, 10sand too 6quartz, 18quartz to 9 silicon,
     },
     allow_productivity = true,
+    show_amount_in_title =false,
   },
   { -- lava to silicon
     type = "recipe",
@@ -102,15 +104,21 @@ data:extend({
     enabled = false,
     energy_required = 64, -- 0.6s*40 lava-to-stone, 0.5*40 grinding sand(free), 2.1s*8 filtration, 16s*1.5smelting quartz = 64,8 (also rounded down)
     ingredients = {
-      { type = "fluid", name = "lava",    amount = 400, fluidbox_multiplier = 2 },
+      { type = "fluid", name = "lava", amount = 400, fluidbox_multiplier = 2 },
       { type = "item",  name = "calcite", amount = 1 }, -- automatically my "complex mode"
     },
     results = {
       { type = "item", name = "kr-silicon", amount = 24 }, --80 sand, 10sand too 6quartz, 18quartz to 9 silicon,
     },
     allow_productivity = true,
+    show_amount_in_title =false,
   },
 })
+if mods["aai-industry"] then
+  -- disable recipes that are overwritten/replaced by K2
+  data.raw.recipe["casting-glass"].enabled = false
+  data.raw.recipe["casting-glass"].hidden = true
+end
 
 -- 1. pepare the Generator
 local generator_api = require("__OCs_base_assets__.prototypes.utils.api")
@@ -129,14 +137,27 @@ local casting_dict = {
   ["kr-glass"] = "metallurgy",
   -- ["kr-quartz"] = "metallurgy", -- filtration process forbits quartz casting
   -- ["kr-silicon"] = "metallurgy", -- silicon is made from quartz, so no casting
+  ["kr-black-reinforced-plate"] = "metallurgy",
+  ["kr-white-reinforced-plate"] = "metallurgy",
 }
 generator_api.batch_generator(casting_dict)
+local prod_recipes = {
+  "casting-kr-sand",
+  "casting-kr-glass",
+  "casting-kr-quartz",
+  "casting-kr-silicon",
+}
+allow_productivity(prod_recipes)
 
 -- 3. Add Recipes to Techs
 local recipe_tech_mapping = {
+  ["lava-to-sand"] = {"lava-to-stone-tech"},
   ["casting-kr-glass"] = { "lava-to-stone-tech" },
+  ["casting-kr-black-reinforced-plate"] = {"casting-concrete-tech"},
+  ["casting-kr-white-reinforced-plate"] = {"casting-concrete-tech"},
 }
 add_recipe_unlocks(recipe_tech_mapping)
+add_prerequisite("casting-concrete-tech","kr-reinforced-plates")
 
 data:extend({
   -- create new K2 technology
