@@ -1,6 +1,6 @@
 {
   "name": "OCs_stone_casting",
-  "version": "0.8.0",
+  "version": "0.8.2",
   "title": "OCs Stone Casting",
   "author": "OC1024",
   "description": "Adds recipes to the foundry that uses lava for stone related products.",
@@ -8,7 +8,7 @@
   "dependencies": [
     "base >= 2.0",
     "space-age",
-    "OCs_base_assets >= 0.3.0",
+    "OCs_base_assets >= 0.3.1",
     "? aai-industry >= 0.6.0",
     "(?) Krastorio2-spaced-out >= 1.4.0"
   ]

@@ -9,7 +9,7 @@
     ["casting-refined-concrete-recipe", "casting-refined-concrete"],
     ["casting-foundation-recipe", "casting-foundation"],
     ["lava-to-landfill-recipe", "casting-landfill"],
-    ["casting-rail-recipe", "casting-rails"],
+    ["casting-rail-recipe", "casting-rail"],
     ["lava-to-wall-recipe", "casting-stone-wall"],
     ["lava-to-stone-wall-recipe", "casting-stone-walls"],
     ["lava-to-concrete-wall-recipe", "casting-concrete-walls"],

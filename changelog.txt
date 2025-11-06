@@ -1,4 +1,19 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.8.2
+Date: 2025-11-06
+  Compatibility:
+    - [Maraxsis] Reintroduced compatibility explicitly as it was previously indirectly supportet by the [AAI Industry] compatibility.
+    - [K2SO] compatibility now is the last compat step to prevent conflicts.
+---------------------------------------------------------------------------------------------------
+Version: 0.8.1
+Date: 2025-11-05
+  Bugfixes:
+    - Changed EN localisation names to capital letters and fixing missing ones. 
+    - Added missing DE localisation lines, fixed typos.
+    - Added missing localisation for [K2SO], DE and EN.
+    - Fixed migration file in case of "casting-rail".
+    - Adjusted modsetting description for complex lava mode. (Complex mode adds calcite to melting not casting recipes now.)
+---------------------------------------------------------------------------------------------------
 Version: 0.8.0
 Date: 2025-11-05
   Minor Features:
