@@ -114,7 +114,7 @@ data:extend({
     show_amount_in_title =false,
   },
 })
-if mods["aai-industry"] then
+if data.raw.recipe["casting-glass"] then
   -- disable recipes that are overwritten/replaced by K2
   data.raw.recipe["casting-glass"].enabled = false
   data.raw.recipe["casting-glass"].hidden = true

@@ -1,4 +1,16 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.8.3
+Date: 2025-11-08
+  Compatibility:
+    - Fixed [Maraxsis] compatibility, as the recipe generator wasn't properly loaded.
+    - [K2SO] not-K2 "casting glass" recipe is now disabled correctly. I hope.
+  Bugfixes:
+    - Fixed missing localisation for Maraxsis compatibility.
+  Other:
+    - Legacy support for expensive-lava-mode where calcite is added to casting recipes. It is possible to have both modes active for more pain.
+    - Removed explicit log for [Foundation Productivity] compatibliity, log is inherently done by helper function.
+    - Removed migration from "expensive-lava-mode" to "complex-lava-mode" as it is re-introduced as legacy option.
+---------------------------------------------------------------------------------------------------
 Version: 0.8.2
 Date: 2025-11-06
   Compatibility:

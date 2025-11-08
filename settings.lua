@@ -17,6 +17,13 @@ data:extend({
         type = "bool-setting",
         name = "complex-lava-mode",
         setting_type = "startup",
+        order = "y",
+        default_value = false
+    },
+    {
+        type = "bool-setting",
+        name = "expensive-lava-mode",
+        setting_type = "startup",
         order = "z",
         default_value = false
     },

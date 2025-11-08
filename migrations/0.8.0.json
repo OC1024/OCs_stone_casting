@@ -14,8 +14,5 @@
     ["lava-to-stone-wall-recipe", "casting-stone-walls"],
     ["lava-to-concrete-wall-recipe", "casting-concrete-walls"],
     ["lava-to-steel-wall-recipe", "casting-steel-walls"]
-  ],
-  "mod-setting": [
-    ["expensive-lava-mode","complex-lava-mode"]
   ]
 }

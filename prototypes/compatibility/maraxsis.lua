@@ -52,6 +52,15 @@ if data.raw["item"]["sand"] then
     })
 end
 
+-- pepare the generator
+local generator_api = require("__OCs_base_assets__.prototypes.utils.api")
+
+-- add new alterative recipes for the generator to use
+local new_alt_recipes = {
+  ["sand"] = {"lava-to-sand","sand"},
+}
+generator_api.register_category_alt_recipes("metallurgy", new_alt_recipes)
+
 -- create new recipes
 local casting_dict = {
     ["maraxsis-glass-panes"] = "metallurgy",
