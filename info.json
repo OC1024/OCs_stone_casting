@@ -8,7 +8,7 @@
   "dependencies": [
     "base >= 2.0",
     "space-age",
-    "OCs_base_assets >= 0.3.2",
+    "OCs_base_assets >= 0.3.3",
     "? aai-industry >= 0.6.0",
     "(?) Krastorio2-spaced-out >= 1.4.0"
   ]

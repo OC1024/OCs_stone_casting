@@ -65,22 +65,30 @@ generator_api.register_category_alt_recipes("metallurgy", new_alt_recipes)
 -- create new recipes
 local casting_dict = {
   ["stone-wall"] = "metallurgy", -- overwrite vanilla version
+  ["gate"] = "metallurgy", -- overwrite vanilla version
   ["concrete-wall"] = "metallurgy",
+  ["concrete-gate"] = "metallurgy",
   ["steel-wall"] = "metallurgy",
+  ["steel-gate"] = "metallurgy",
   ["stone-tablet"] = "metallurgy",
   ["glass"] = "metallurgy",
 }
 generator_api.batch_generator(casting_dict)
 
 -- remove and add recipes from techs
-add_prerequisite("casting-wall-tech", {"steel-walls","casting-concrete-tech"}) -- since the concrete wall needs concrete
+local new_prereq = {
+  ["casting-wall-tech"] ={"steel-gates","steel-walls","casting-concrete-tech"}, -- since the concrete wall needs concrete
+}
+add_prerequisites(new_prereq)
 
 -- add recipes to technology
 local mapping  = {
   ["lava-to-sand"] = {"lava-to-stone-tech"},
   ["casting-stone-wall"] = {"casting-wall-tech"}, -- already there
   ["casting-concrete-wall"] = {"casting-wall-tech"},
+  ["casting-concrete-gate"] = {"casting-wall-tech"},
   ["casting-steel-wall"] = {"casting-wall-tech"},
+  ["casting-steel-gate"] = {"casting-wall-tech"},
   ["casting-stone-tablet"] = {"foundry"},
   ["casting-glass"] = {"lava-to-stone-tech"},
 }

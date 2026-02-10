@@ -157,7 +157,10 @@ local recipe_tech_mapping = {
   ["casting-kr-white-reinforced-plate"] = {"casting-concrete-tech"},
 }
 add_recipe_unlocks(recipe_tech_mapping)
-add_prerequisite("casting-concrete-tech","kr-reinforced-plates")
+local new_prereqs = {
+  ["casting-concrete-tech"] = "kr-reinforced-plates",
+}
+add_prerequisites(new_prereqs)
 
 data:extend({
   -- create new K2 technology

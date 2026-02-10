@@ -1,4 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.8.4
+Date: 2026-02-10
+  Compatibility:
+    - [AAI Industry] Added the casting of the new concrete and steel gates, the casting walls tech now requires the steel gate tech.
+  Bugfixes:
+    - [Metal and Stars] Recipe lava to (silica) sand is now unlocked correctly.
+  Changes:
+    - Updated dependency of [OCs Base Assets] to >0.3.3 as helper functions were updated.
+  Localisation:
+    - Unify EN localisation with my other mods.
+---------------------------------------------------------------------------------------------------
 Version: 0.8.3
 Date: 2025-11-08
   Compatibility:
