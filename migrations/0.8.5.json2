@@ -1,0 +1,22 @@
+{
+  "recipe": [
+    ["casting-stone-wall", "oc-casting-stone-wall"],
+    ["casting-concrete", "oc-casting-concrete"],
+    ["casting-refined-concrete", "oc-casting-refined-concrete"],
+    ["casting-landfill", "oc-casting-landfill"],
+    ["casting-foundation", "oc-casting-foundation"],
+    ["casting-stone-furnace", "oc-casting-stone-furnace"],
+    ["casting-steel-furnace", "oc-casting-steel-furnace"],
+    ["casting-gate", "oc-casting-gate"],
+    ["casting-rail", "oc-casting-rail"],
+
+    ["casting-concrete-wall", "oc-casting-concrete-wall"],
+    ["casting-concrete-gate", "oc-casting-concrete-gate"],
+    ["casting-steel-wall", "oc-casting-steel-wall"],
+    ["casting-steel-gate", "oc-casting-steel-gate"],
+    ["casting-stone-tablet", "oc-casting-stone-tablet"],
+    ["casting-glass", "oc-casting-glass"],
+    
+    ["casting-maraxsis-glass-panes", "oc-casting-maraxsis-glass-panes"]
+  ]
+}

@@ -1,14 +1,15 @@
 {
   "name": "OCs_stone_casting",
-  "version": "0.8.4",
+  "version": "0.8.5",
   "title": "OCs Stone Casting",
   "author": "OC1024",
+  "space_travel_required": true,
   "description": "Adds recipes to the foundry that uses lava for stone related products.",
   "factorio_version": "2.0",
   "dependencies": [
     "base >= 2.0",
     "space-age",
-    "OCs_base_assets >= 0.3.3",
+    "OCs_base_assets >= 0.3.5",
     "? aai-industry >= 0.6.0",
     "(?) Krastorio2-spaced-out >= 1.4.0"
   ]

@@ -16,6 +16,9 @@ end
 if mods["foundation-productivity"] then
   require("prototypes.compatibility.foundation-productivity")
 end
+if mods["landfill-productivity"] then
+  require("prototypes.compatibility.landfill-productivity")
+end
 if mods["Krastorio2-spaced-out"] then -- replaces normal Krastorio2 with space-age compatible version
   require("prototypes.compatibility.Krastorio2")
 end

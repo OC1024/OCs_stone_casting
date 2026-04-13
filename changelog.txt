@@ -1,4 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.8.5
+Date: 2026-04-13-wip
+  Compatibility:
+    - [Landfill Productivity] Added compatibility. Now you get even more landfill from your infinite lava on Vulcanus.
+  Changes:
+    - Updated dependency of [OCs Base Assets] to >=0.3.5 as helper functions were updated. (makes it incompatible with older versions)
+    - Set this mod properly to be a [Space Age] mod, which it was from the start.
+  Graphics:
+    - Updated lava droplet icons for the casting wall and gate techs.
+---------------------------------------------------------------------------------------------------
 Version: 0.8.4
 Date: 2026-02-10
   Compatibility:
@@ -6,7 +16,7 @@ Date: 2026-02-10
   Bugfixes:
     - [Metal and Stars] Recipe lava to (silica) sand is now unlocked correctly.
   Changes:
-    - Updated dependency of [OCs Base Assets] to >0.3.3 as helper functions were updated.
+    - Updated dependency of [OCs Base Assets] to >=0.3.3 as helper functions were updated.
   Localisation:
     - Unify EN localisation with my other mods.
 ---------------------------------------------------------------------------------------------------
@@ -19,7 +29,7 @@ Date: 2025-11-08
     - Fixed missing localisation for Maraxsis compatibility.
   Other:
     - Legacy support for expensive-lava-mode where calcite is added to casting recipes. It is possible to have both modes active for more pain.
-    - Removed explicit log for [Foundation Productivity] compatibliity, log is inherently done by helper function.
+    - Removed explicit log for [Foundation Productivity] compatibility, log is inherently done by helper function.
     - Removed migration from "expensive-lava-mode" to "complex-lava-mode" as it is re-introduced as legacy option.
 ---------------------------------------------------------------------------------------------------
 Version: 0.8.2

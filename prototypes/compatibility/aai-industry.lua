@@ -1,3 +1,5 @@
+local generator_api = require("__OCs_base_assets__.prototypes.utils.api")-- pepare the generator
+local oc_helper = require("__OCs_base_assets__.prototypes.utils.helper")
 
 if data.raw["item"]["sand"] then
   data:extend({
@@ -53,9 +55,6 @@ if data.raw["item"]["sand"] then
   })
 end
 
--- pepare the generator
-local generator_api = require("__OCs_base_assets__.prototypes.utils.api")
-
 -- add new alterative recipes for the generator to use
 local new_alt_recipes = {
   ["sand"] = {"lava-to-sand","sand"},
@@ -79,7 +78,7 @@ generator_api.batch_generator(casting_dict)
 local new_prereq = {
   ["casting-wall-tech"] ={"steel-gates","steel-walls","casting-concrete-tech"}, -- since the concrete wall needs concrete
 }
-add_prerequisites(new_prereq)
+oc_helper.add_prerequisites(new_prereq)
 
 -- add recipes to technology
 local mapping  = {
@@ -95,4 +94,4 @@ local mapping  = {
 if settings.startup["allow-stone-to-lava"].value then
   mapping["sand-to-lava"] = {"lava-to-stone-tech"}
 end
-add_recipe_unlocks(mapping)
+oc_helper.add_recipe_unlocks(mapping)

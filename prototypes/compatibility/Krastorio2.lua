@@ -1,3 +1,5 @@
+local oc_helper = require("__OCs_base_assets__.prototypes.utils.helper")
+
 data:extend({
   -- overwrite sand to kr-sand
   { -- lava to kr-sand
@@ -18,7 +20,7 @@ data:extend({
     },
     category = "metallurgy",
     enabled = false,
-    energy_required = 24, --24 for 40 stone, 0.5*40 grinding sand (free)
+    energy_required = 24,                                                       --24 for 40 stone, 0.5*40 grinding sand (free)
     ingredients = {
       { type = "fluid", name = "lava", amount = 400, fluidbox_multiplier = 4 }, -- 40 stone
     },
@@ -26,7 +28,7 @@ data:extend({
       { type = "item", name = "kr-sand", amount = 100 }, -- 2.5sand per stone (7-8 sand from 3 stone)
     },
     allow_productivity = true,
-    show_amount_in_title =false,
+    show_amount_in_title = false,
   },
   -- overwrite kr-sand to lava
   { -- kr-sand to lava
@@ -40,7 +42,7 @@ data:extend({
     subgroup = "vulcanus-processes",
     order = "a[melting]-a[lava-c]",
     enabled = false,
-    energy_required = 16, --twice as fast as stone-to-lava since sand is smaller
+    energy_required = 16,                                                        --twice as fast as stone-to-lava since sand is smaller
     ingredients = {
       { type = "item", name = "kr-sand", amount = 100, itembox_multiplyer = 4 }, -- 2.5sand per stone
     },
@@ -73,14 +75,14 @@ data:extend({
     enabled = false,
     energy_required = 40, -- 0.6s*40 lava-to-sand, 2.1s*8 filtration = 40.8 (rounded to 40 to be nice)
     ingredients = {
-      { type = "fluid", name = "lava", amount = 400, fluidbox_multiplier = 2 },
+      { type = "fluid", name = "lava",    amount = 400, fluidbox_multiplier = 2 },
       { type = "item",  name = "calcite", amount = 1 }, -- automatically my "complex mode"
     },
     results = {
       { type = "item", name = "kr-quartz", amount = 48 }, --80 sand, 10sand too 6quartz, 18quartz to 9 silicon,
     },
     allow_productivity = true,
-    show_amount_in_title =false,
+    show_amount_in_title = false,
   },
   { -- lava to silicon
     type = "recipe",
@@ -104,14 +106,14 @@ data:extend({
     enabled = false,
     energy_required = 64, -- 0.6s*40 lava-to-stone, 0.5*40 grinding sand(free), 2.1s*8 filtration, 16s*1.5smelting quartz = 64,8 (also rounded down)
     ingredients = {
-      { type = "fluid", name = "lava", amount = 400, fluidbox_multiplier = 2 },
+      { type = "fluid", name = "lava",    amount = 400, fluidbox_multiplier = 2 },
       { type = "item",  name = "calcite", amount = 1 }, -- automatically my "complex mode"
     },
     results = {
       { type = "item", name = "kr-silicon", amount = 24 }, --80 sand, 10sand too 6quartz, 18quartz to 9 silicon,
     },
     allow_productivity = true,
-    show_amount_in_title =false,
+    show_amount_in_title = false,
   },
 })
 if data.raw.recipe["casting-glass"] then
@@ -141,6 +143,7 @@ local casting_dict = {
   ["kr-white-reinforced-plate"] = "metallurgy",
 }
 generator_api.batch_generator(casting_dict)
+
 local prod_recipes = {
   "casting-kr-sand",
   "casting-kr-glass",
@@ -151,20 +154,21 @@ allow_productivity(prod_recipes)
 
 -- 3. Add Recipes to Techs
 local recipe_tech_mapping = {
-  ["lava-to-sand"] = {"lava-to-stone-tech"},
+  ["lava-to-sand"] = { "lava-to-stone-tech" },
   ["casting-kr-glass"] = { "lava-to-stone-tech" },
-  ["casting-kr-black-reinforced-plate"] = {"casting-concrete-tech"},
-  ["casting-kr-white-reinforced-plate"] = {"casting-concrete-tech"},
+  ["casting-kr-black-reinforced-plate"] = { "casting-concrete-tech" },
+  ["casting-kr-white-reinforced-plate"] = { "casting-concrete-tech" },
 }
-add_recipe_unlocks(recipe_tech_mapping)
+oc_helper.add_recipe_unlocks(recipe_tech_mapping)
+
 local new_prereqs = {
   ["casting-concrete-tech"] = "kr-reinforced-plates",
 }
-add_prerequisites(new_prereqs)
+oc_helper.add_prerequisites(new_prereqs)
 
 data:extend({
   -- create new K2 technology
-  {-- advanced-mineral-processing (quartz and silicon from lava)
+  { -- advanced-mineral-processing (quartz and silicon from lava)
     type = "technology",
     name = "kr-advanced-mineral-processing-tech",
     icons =
@@ -180,13 +184,13 @@ data:extend({
         icon_mipmaps = 4,
       }
     },
-    prerequisites = { "lava-to-stone-tech", "kr-silicon-processing","metallurgic-science-pack","production-science-pack"},
+    prerequisites = { "lava-to-stone-tech", "kr-silicon-processing", "metallurgic-science-pack", "production-science-pack" },
     unit =
     {
       ingredients = {
-        { "chemical-science-pack",   1 },
-        { "space-science-pack",      1 },
-        { "production-science-pack", 1 },
+        { "chemical-science-pack",    1 },
+        { "space-science-pack",       1 },
+        { "production-science-pack",  1 },
         { "metallurgic-science-pack", 2 }
       },
       time = 60,

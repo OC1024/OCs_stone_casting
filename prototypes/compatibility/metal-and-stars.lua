@@ -1,6 +1,9 @@
+
+local oc_helper = require("__OCs_base_assets__.prototypes.utils.helper")
+
 for tech_name, _ in pairs(data.raw.technology) do
   if string.match(tech_name, "^railgun%-ammo%-productivity%-?%d*$") then
-    add_productivity_bonus(tech_name, "casting-rail", 0.1)
+    oc_helper.add_productivity_bonus(tech_name, "casting-rail", 0.1)
   end
 end
 
@@ -38,5 +41,5 @@ data:extend({
 local mapping = {
   ["lava-to-silica-sand"] = { "lava-to-stone-tech" }
 }
-add_recipe_unlocks(mapping)
+oc_helper.add_recipe_unlocks(mapping)
 -- end

@@ -1,3 +1,5 @@
+local oc_helper = require("__OCs_base_assets__.prototypes.utils.helper")
+
 data:extend({
   { -- lava-to-stone
     type = "technology",
@@ -36,7 +38,7 @@ data:extend({
         icon_mipmaps = 4,
       },
       {
-        icon = "__OCs_stone_casting__/graphics/icons/overlayer-recipe-lava-droplet.png",
+        icon = "__OCs_base_assets__/graphics/icons/overlayer-recipe-lava-droplet.png",
         icon_size = 64,
         icon_mipmaps = 4,
         icon_scale = 4,
@@ -69,7 +71,7 @@ data:extend({
         icon_mipmaps = 4,
       },
       {
-        icon = "__OCs_stone_casting__/graphics/icons/overlayer-recipe-lava-droplet.png",
+        icon = "__OCs_base_assets__/graphics/icons/overlayer-recipe-lava-droplet.png",
         icon_size = 64,
         icon_mipmaps = 4,
         icon_scale = 4,
@@ -99,7 +101,7 @@ if settings.startup["allow-stone-to-lava"].value then
   local mapping = {
     ["stone-to-lava"] = { "lava-to-stone-tech" },
   }
-  add_recipe_unlocks(mapping)
+  oc_helper.add_recipe_unlocks(mapping)
 end
 
 -- Conditionally included technologies
