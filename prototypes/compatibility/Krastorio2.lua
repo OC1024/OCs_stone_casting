@@ -5,8 +5,7 @@ data:extend({
   { -- lava to kr-sand
     type = "recipe",
     name = "lava-to-sand",
-    icons =
-    {
+    icons = {
       {
         icon = "__OCs_base_assets__/graphics/icons/sand.png", -- sand icon stolen from Kastorio2.
         icon_size = 64,
@@ -56,8 +55,7 @@ data:extend({
   { -- lava to quartz
     type = "recipe",
     name = "lava-to-quartz",
-    icons =
-    {
+    icons = {
       {
         icon = "__Krastorio2Assets__/icons/items/quartz.png",
         icon_size = 64,
@@ -87,8 +85,7 @@ data:extend({
   { -- lava to silicon
     type = "recipe",
     name = "lava-to-silicon",
-    icons =
-    {
+    icons = {
       {
         icon = "__Krastorio2Assets__/icons/items/silicon.png",
         icon_size = 64,
@@ -116,10 +113,10 @@ data:extend({
     show_amount_in_title = false,
   },
 })
-if data.raw.recipe["casting-glass"] then
+if data.raw.recipe["oc-casting-glass"] then
   -- disable recipes that are overwritten/replaced by K2
-  data.raw.recipe["casting-glass"].enabled = false
-  data.raw.recipe["casting-glass"].hidden = true
+  data.raw.recipe["oc-casting-glass"].enabled = false
+  data.raw.recipe["oc-casting-glass"].hidden = true
 end
 
 -- 1. pepare the Generator
@@ -127,7 +124,7 @@ local generator_api = require("__OCs_base_assets__.prototypes.utils.api")
 -- register new recipes to Generator
 local new_alt_recipes = {
   ["kr-sand"] = { "lava-to-sand", "kr-sand" },
-  ["kr-glass"] = { "casting-kr-glass", "kr-glass" },
+  ["kr-glass"] = { "oc-casting-kr-glass", "kr-glass" },
   ["kr-quartz"] = { "lava-to-quartz", "kr-quarz" },
   ["kr-silicon"] = { "lava-to-silicon", "kr-silicon" },
 }
@@ -145,19 +142,19 @@ local casting_dict = {
 generator_api.batch_generator(casting_dict)
 
 local prod_recipes = {
-  "casting-kr-sand",
-  "casting-kr-glass",
-  "casting-kr-quartz",
-  "casting-kr-silicon",
+  "oc-casting-kr-sand",
+  "oc-casting-kr-glass",
+  "oc-casting-kr-quartz",
+  "oc-casting-kr-silicon",
 }
 allow_productivity(prod_recipes)
 
 -- 3. Add Recipes to Techs
 local recipe_tech_mapping = {
   ["lava-to-sand"] = { "lava-to-stone-tech" },
-  ["casting-kr-glass"] = { "lava-to-stone-tech" },
-  ["casting-kr-black-reinforced-plate"] = { "casting-concrete-tech" },
-  ["casting-kr-white-reinforced-plate"] = { "casting-concrete-tech" },
+  ["oc-casting-kr-glass"] = { "lava-to-stone-tech" },
+  ["oc-casting-kr-black-reinforced-plate"] = { "casting-concrete-tech" },
+  ["oc-casting-kr-white-reinforced-plate"] = { "casting-concrete-tech" },
 }
 oc_helper.add_recipe_unlocks(recipe_tech_mapping)
 
@@ -171,8 +168,7 @@ data:extend({
   { -- advanced-mineral-processing (quartz and silicon from lava)
     type = "technology",
     name = "kr-advanced-mineral-processing-tech",
-    icons =
-    {
+    icons = {
       {
         icon = "__space-age__/graphics/technology/foundry.png",
         icon_size = 256,
@@ -185,8 +181,7 @@ data:extend({
       }
     },
     prerequisites = { "lava-to-stone-tech", "kr-silicon-processing", "metallurgic-science-pack", "production-science-pack" },
-    unit =
-    {
+    unit = {
       ingredients = {
         { "chemical-science-pack",    1 },
         { "space-science-pack",       1 },

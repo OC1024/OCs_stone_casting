@@ -21,17 +21,16 @@ data:extend({
     effects = {
       { type = "unlock-recipe", recipe = "lava-to-stone" },
       { type = "unlock-recipe", recipe = "lava-to-stone-brick" },
-      { type = "unlock-recipe", recipe = "casting-rail" },
-      { type = "unlock-recipe", recipe = "casting-landfill" },
-      { type = "unlock-recipe", recipe = "casting-stone-furnace" },
-      { type = "unlock-recipe", recipe = "casting-steel-furnace" },
+      { type = "unlock-recipe", recipe = "oc-casting-rail" },
+      { type = "unlock-recipe", recipe = "oc-casting-landfill" },
+      { type = "unlock-recipe", recipe = "oc-casting-stone-furnace" },
+      { type = "unlock-recipe", recipe = "oc-casting-steel-furnace" },
     },
   },
   { -- casting concrete
     type = "technology",
     name = "casting-concrete-tech",
-    icons =
-    {
+    icons = {
       {
         icon = "__base__/graphics/technology/concrete.png",
         icon_size = 256,
@@ -56,15 +55,14 @@ data:extend({
       count = 250
     },
     effects = {
-      { type = "unlock-recipe", recipe = "casting-concrete" },
-      { type = "unlock-recipe", recipe = "casting-refined-concrete" }
+      { type = "unlock-recipe", recipe = "oc-casting-concrete" },
+      { type = "unlock-recipe", recipe = "oc-casting-refined-concrete" }
     },
   },
   { -- casting stone-wall + gate
     type = "technology",
     name = "casting-wall-tech",
-    icons =
-    {
+    icons = {
       {
         icon = "__base__/graphics/technology/stone-wall.png",
         icon_size = 256,
@@ -78,8 +76,7 @@ data:extend({
       }
     },
     prerequisites = { "lava-to-stone-tech", "gate" },
-    unit =
-    {
+    unit = {
       ingredients = {
         { "automation-science-pack", 1 },
         { "logistic-science-pack",   1 },
@@ -90,8 +87,8 @@ data:extend({
       count = 300
     },
     effects = {
-      { type = "unlock-recipe", recipe = "casting-stone-wall" },
-      { type = "unlock-recipe", recipe = "casting-gate" }
+      { type = "unlock-recipe", recipe = "oc-casting-stone-wall" },
+      { type = "unlock-recipe", recipe = "oc-casting-gate" }
     },
   }
 })
@@ -110,8 +107,7 @@ if settings.startup["allow-casting-foundation"].value then
     { -- casting foundation
       type = "technology",
       name = "casting-foundation-tech",
-      icons =
-      {
+      icons = {
         {
           icon = "__space-age__/graphics/technology/foundation.png",
           icon_size = 256,
@@ -144,7 +140,7 @@ if settings.startup["allow-casting-foundation"].value then
         count = 1000
       },
       effects = {
-        { type = "unlock-recipe", recipe = "casting-foundation" },
+        { type = "unlock-recipe", recipe = "oc-casting-foundation" },
       },
     }
   })

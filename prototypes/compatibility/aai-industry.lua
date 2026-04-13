@@ -83,13 +83,13 @@ oc_helper.add_prerequisites(new_prereq)
 -- add recipes to technology
 local mapping  = {
   ["lava-to-sand"] = {"lava-to-stone-tech"},
-  ["casting-stone-wall"] = {"casting-wall-tech"}, -- already there
-  ["casting-concrete-wall"] = {"casting-wall-tech"},
-  ["casting-concrete-gate"] = {"casting-wall-tech"},
-  ["casting-steel-wall"] = {"casting-wall-tech"},
-  ["casting-steel-gate"] = {"casting-wall-tech"},
-  ["casting-stone-tablet"] = {"foundry"},
-  ["casting-glass"] = {"lava-to-stone-tech"},
+  ["oc-casting-stone-wall"] = {"casting-wall-tech"}, -- already there
+  ["oc-casting-concrete-wall"] = {"casting-wall-tech"},
+  ["oc-casting-concrete-gate"] = {"casting-wall-tech"},
+  ["oc-casting-steel-wall"] = {"casting-wall-tech"},
+  ["oc-casting-steel-gate"] = {"casting-wall-tech"},
+  ["oc-casting-stone-tablet"] = {"foundry"},
+  ["oc-casting-glass"] = {"lava-to-stone-tech"},
 }
 if settings.startup["allow-stone-to-lava"].value then
   mapping["sand-to-lava"] = {"lava-to-stone-tech"}

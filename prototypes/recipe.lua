@@ -98,4 +98,4 @@ local casting_dict = {
 }
 generator_api.batch_generator(casting_dict)
 
-data.raw.recipe["casting-foundation"].surface_conditions = { { property = "pressure", min = 4000, max = 4000 } } -- Vulcanus only
+data.raw.recipe["oc-casting-foundation"].surface_conditions = { { property = "pressure", min = 4000, max = 4000 } } -- Vulcanus only

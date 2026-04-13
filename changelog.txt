@@ -1,10 +1,11 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.8.5
-Date: 2026-04-13-wip
+Date: 2026-04-13
   Compatibility:
+    - Updated dependency of [OCs Base Assets] to >=0.4.0 as helper functions were updated. (makes it incompatible with older versions)
     - [Landfill Productivity] Added compatibility. Now you get even more landfill from your infinite lava on Vulcanus.
+    - Listed all previous compatibilities in the info.json file. My bad.
   Changes:
-    - Updated dependency of [OCs Base Assets] to >=0.3.5 as helper functions were updated. (makes it incompatible with older versions)
     - Set this mod properly to be a [Space Age] mod, which it was from the start.
   Graphics:
     - Updated lava droplet icons for the casting wall and gate techs.
