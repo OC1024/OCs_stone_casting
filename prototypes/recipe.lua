@@ -1,11 +1,10 @@
-local oc_helper = require("__OCs_base_assets__.prototypes.utils.helper")
+local oc_recipe = require("__OCs_base_assets__.prototypes.utils.oc_recipe")
 
 data:extend({
   { -- lava to stone
     type = "recipe",
     name = "lava-to-stone",
-    icons =
-    {
+    icons = {
       {
         icon = "__base__/graphics/icons/stone.png",
         icon_size = 64,
@@ -55,8 +54,7 @@ data:extend({
   { -- lava to brick
     type = "recipe",
     name = "lava-to-stone-brick",
-    icons =
-    {
+    icons = {
       {
         icon = "__base__/graphics/icons/stone-brick.png",
         icon_size = 64,

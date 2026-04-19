@@ -1,13 +1,12 @@
-local generator_api = require("__OCs_base_assets__.prototypes.utils.api")-- pepare the generator
-local oc_helper = require("__OCs_base_assets__.prototypes.utils.helper")
+local generator_api = require("__OCs_base_assets__.prototypes.utils.api")
+local oc_tech   = require("__OCs_base_assets__.prototypes.utils.oc_tech")
 
 if data.raw["item"]["sand"] then
   data:extend({
     { -- lava to sand
       type = "recipe",
       name = "lava-to-sand",
-      icons =
-      {
+      icons = {
         {
           icon = "__OCs_base_assets__/graphics/icons/sand.png", -- sand icon stolen from Kastorio2. 
           icon_size = 64,
@@ -78,7 +77,7 @@ generator_api.batch_generator(casting_dict)
 local new_prereq = {
   ["casting-wall-tech"] ={"steel-gates","steel-walls","casting-concrete-tech"}, -- since the concrete wall needs concrete
 }
-oc_helper.add_prerequisites(new_prereq)
+oc_tech.add_prerequisites(new_prereq)
 
 -- add recipes to technology
 local mapping  = {
@@ -94,4 +93,4 @@ local mapping  = {
 if settings.startup["allow-stone-to-lava"].value then
   mapping["sand-to-lava"] = {"lava-to-stone-tech"}
 end
-oc_helper.add_recipe_unlocks(mapping)
+oc_tech.add_recipe_unlocks(mapping)

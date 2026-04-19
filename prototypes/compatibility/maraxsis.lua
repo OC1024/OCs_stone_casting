@@ -1,5 +1,5 @@
-local generator_api = require("__OCs_base_assets__.prototypes.utils.api") -- pepare the generator
-local oc_helper = require("__OCs_base_assets__.prototypes.utils.helper")
+local generator_api = require("__OCs_base_assets__.prototypes.utils.api")
+local oc_tech   = require("__OCs_base_assets__.prototypes.utils.oc_tech")
 
 if data.raw["item"]["sand"] then
   data:extend({
@@ -75,12 +75,12 @@ local mapping = {
 if settings.startup["allow-stone-to-lava"].value then
     mapping["sand-to-lava"] = { "lava-to-stone-tech" }
 end
-oc_helper.add_recipe_unlocks(mapping)
+oc_tech.add_recipe_unlocks(mapping)
 
 -- add glass productivity for the casting recipe
 for tech_name, _ in pairs(data.raw.technology) do
   if string.match(tech_name, "^glass%-productivity%-%d+$") then
-        oc_helper.add_productivity_bonus(tech_name, "oc-casting-maraxsis-glass-planes", 0.1)
+        oc_tech.add_productivity_bonus(tech_name, "oc-casting-maraxsis-glass-planes", 0.1)
         log("Added productivity bonus for oc-casting-maraxsis-glass-planes to tech: " .. tech_name)
   end
 end

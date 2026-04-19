@@ -1,9 +1,8 @@
-
-local oc_helper = require("__OCs_base_assets__.prototypes.utils.helper")
+local oc_tech = require("__OCs_base_assets__.prototypes.utils.oc_tech")
 
 for tech_name, _ in pairs(data.raw.technology) do
   if string.match(tech_name, "^railgun%-ammo%-productivity%-?%d*$") then
-    oc_helper.add_productivity_bonus(tech_name, "oc-casting-rail", 0.1)
+    oc_tech.add_productivity_bonus(tech_name, "oc-casting-rail", 0.1)
   end
 end
 
@@ -13,8 +12,7 @@ data:extend({
     type = "recipe",
     name = "lava-to-silica-sand",
     category = "metallurgy",
-    icons =
-    {
+    icons = {
       {
         icon = "__common-prototypes-graphics__/icons/items/silica-sand-1.png",
         icon_size = 64,
@@ -41,5 +39,5 @@ data:extend({
 local mapping = {
   ["lava-to-silica-sand"] = { "lava-to-stone-tech" }
 }
-oc_helper.add_recipe_unlocks(mapping)
+oc_tech.add_recipe_unlocks(mapping)
 -- end

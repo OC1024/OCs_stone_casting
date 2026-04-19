@@ -6,28 +6,28 @@ if settings.startup["expensive-lava-mode"].value then
   local recipes_to_update = { -- "casting" recipes
     "lava-to-stone",
     "lava-to-stone-brick",
-    "casting-concrete",
-    "casting-refined-concrete",
-    "casting-landfill",
-    "casting-foundation",
-    "casting-stone-furnace", -- seems a bit to expensive to add 1 calcite for 5 stone. Usually 1 calcite for 50 stone.
-    "casting-steel-furnace",
-    "casting-rail",
-    "casting-wall",
-    "casting-stone-wall",
-    "casting-gate",
+    "oc-casting-concrete",
+    "oc-casting-refined-concrete",
+    "oc-casting-landfill",
+    "oc-casting-foundation",
+    "oc-casting-stone-furnace", -- seems a bit to expensive to add 1 calcite for 5 stone. Usually 1 calcite for 50 stone.
+    "oc-casting-steel-furnace",
+    "oc-casting-rail",
+    "oc-casting-wall",
+    "oc-casting-stone-wall",
+    "oc-casting-gate",
     "lava-to-sand",
     -- aai-industry
-    "casting-concrete-wall",
-    "casting-steel-wall",
-    "casting-stone-tablet", -- seeems also a bit expensive 1 calcite for 4 stone-tablet
-    "casting-glass",
+    "oc-casting-concrete-wall",
+    "oc-casting-steel-wall",
+    "oc-casting-stone-tablet", -- seeems also a bit expensive 1 calcite for 4 stone-tablet
+    "oc-casting-glass",
     -- krastorio2
-    "casting-kr-glass",
+    "oc-casting-kr-glass",
     -- "lava-to-quartz", -- would add calcite twice
     -- "lava-to-silicon", -- would add calcite twice
     -- Maraxsis
-    "casting-maraxsis-glass-panes",
+    "oc-casting-maraxsis-glass-panes",
     -- Metal and Stars
     "lava-to-silica-sand",
   }

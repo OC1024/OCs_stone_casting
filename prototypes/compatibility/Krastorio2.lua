@@ -1,4 +1,5 @@
-local oc_helper = require("__OCs_base_assets__.prototypes.utils.helper")
+local oc_tech = require("__OCs_base_assets__.prototypes.utils.oc_tech")
+local oc_recipe = require("__OCs_base_assets__.prototypes.utils.oc_recipe")
 
 data:extend({
   -- overwrite sand to kr-sand
@@ -147,7 +148,7 @@ local prod_recipes = {
   "oc-casting-kr-quartz",
   "oc-casting-kr-silicon",
 }
-allow_productivity(prod_recipes)
+oc_recipe.allow_productivity(prod_recipes)
 
 -- 3. Add Recipes to Techs
 local recipe_tech_mapping = {
@@ -161,7 +162,7 @@ oc_helper.add_recipe_unlocks(recipe_tech_mapping)
 local new_prereqs = {
   ["casting-concrete-tech"] = "kr-reinforced-plates",
 }
-oc_helper.add_prerequisites(new_prereqs)
+oc_tech.add_prerequisites(new_prereqs)
 
 data:extend({
   -- create new K2 technology

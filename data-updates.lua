@@ -7,7 +7,7 @@ end
 if mods["metal-and-stars"] then
   require("prototypes.compatibility.metal-and-stars")
 end
-if mods["Maraxsis"] then
+if mods["maraxsis"] then
   require("prototypes.compatibility.maraxsis")
 end
 if mods["concrete-productivity"] then

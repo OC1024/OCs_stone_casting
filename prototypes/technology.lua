@@ -1,4 +1,4 @@
-local oc_helper = require("__OCs_base_assets__.prototypes.utils.helper")
+local oc_tech = require("__OCs_base_assets__.prototypes.utils.oc_tech")
 
 data:extend({
   { -- lava-to-stone
@@ -98,7 +98,7 @@ if settings.startup["allow-stone-to-lava"].value then
   local mapping = {
     ["stone-to-lava"] = { "lava-to-stone-tech" },
   }
-  oc_helper.add_recipe_unlocks(mapping)
+  oc_tech.add_recipe_unlocks(mapping)
 end
 
 -- Conditionally included technologies
