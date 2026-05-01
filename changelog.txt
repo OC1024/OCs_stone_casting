@@ -1,4 +1,16 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.8.9
+Date: 2026-05-01
+  Compatibility:
+    - Updated dependency of [OCs Base Assets] to >=0.4.3.
+    - Changed a few things in [AAI Industry] and [Maraxsis] compat. It now follows the same pattern as the other compat files, e.g. sand-to-lava is only optional with the setting enabled.
+    - New tech for [K2SO] compat for reinforced plates to allow concrete casting witout to unlock the reinforced plate first.
+---------------------------------------------------------------------------------------------------
+Version: 0.8.8
+Date: 2026-04-20
+  Bugfixes:
+    - Fixed a crash error with [K2SO] compat file.
+---------------------------------------------------------------------------------------------------
 Version: 0.8.7
 Date: 2026-04-19
   Bugfixes:

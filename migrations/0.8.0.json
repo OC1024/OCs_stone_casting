@@ -2,6 +2,7 @@
   "recipe": [
     ["lava-to-stone-recipe", "lava-to-stone"],
     ["stone-to-lava-recipe", "stone-to-lava"],
+    ["sand-to-lava-recipe", "sand-to-lava"],
     ["lava-to-sand-recipe", "casting-sand"],
     ["lava-to-brick-recipe", "lava-to-stone-brick"],
     ["lava-to-brick", "lava-to-stone-brick"],

@@ -1,4 +1,6 @@
 local oc_helper = require("__OCs_base_assets__.prototypes.utils.helper")
+local oc_tech = require("__OCs_base_assets__.prototypes.utils.oc_tech")
+local oc_recipe = require("__OCs_base_assets__.prototypes.utils.oc_recipe")
 
 -- legacy support for calcite in casting recipes - more expensive
 if settings.startup["expensive-lava-mode"].value then
@@ -34,7 +36,7 @@ if settings.startup["expensive-lava-mode"].value then
 
   for _, recipe_name in pairs(recipes_to_update) do
     -- Add calcite as an additional ingredient
-      oc_helper.add_ingredient(recipe_name, "item", "calcite", 1)
+      oc_recipe.add_ingredient(recipe_name, "item", "calcite", 1)
   end
 end
 
@@ -42,14 +44,15 @@ end
 if settings.startup["complex-lava-mode"].value then
   -- List of recipes to modify
   local recipes_to_update = { -- melting recipes
-    "stone-to-lava",
-    "sand-to-lava", -- if present
+    "stone-to-lava", -- base
+    "sand-to-lava", -- AAI Industry, K2SO, Maraxsis, Moshine
+    "silica-sand-to-lava", -- Metal and Stars
   }
 
   for _, recipe_name in pairs(recipes_to_update) do
     -- Add calcite as an additional ingredient
-      oc_helper.add_ingredient(recipe_name, "item", "calcite", 1)
+      oc_recipe.add_ingredient(recipe_name, "item", "calcite", 1)
   end
 end
 
-oc_helper.allow_productivity({ "casting-glass", "casting-stone-tablet","casting-kr-glass" })
+oc_recipe.allow_productivity({ "casting-glass", "casting-stone-tablet","casting-kr-glass" })

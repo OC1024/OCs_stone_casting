@@ -154,15 +154,9 @@ oc_recipe.allow_productivity(prod_recipes)
 local recipe_tech_mapping = {
   ["lava-to-sand"] = { "lava-to-stone-tech" },
   ["oc-casting-kr-glass"] = { "lava-to-stone-tech" },
-  ["oc-casting-kr-black-reinforced-plate"] = { "casting-concrete-tech" },
-  ["oc-casting-kr-white-reinforced-plate"] = { "casting-concrete-tech" },
 }
-oc_helper.add_recipe_unlocks(recipe_tech_mapping)
+oc_tech.add_recipe_unlocks(recipe_tech_mapping)
 
-local new_prereqs = {
-  ["casting-concrete-tech"] = "kr-reinforced-plates",
-}
-oc_tech.add_prerequisites(new_prereqs)
 
 data:extend({
   -- create new K2 technology
@@ -181,13 +175,13 @@ data:extend({
         icon_mipmaps = 4,
       }
     },
-    prerequisites = { "lava-to-stone-tech", "kr-silicon-processing", "metallurgic-science-pack", "production-science-pack" },
+    prerequisites = { "lava-to-stone-tech", "kr-silicon-processing", "production-science-pack", "space-science-pack", "metallurgic-science-pack" },
     unit = {
       ingredients = {
         { "chemical-science-pack",    1 },
         { "space-science-pack",       1 },
         { "production-science-pack",  1 },
-        { "metallurgic-science-pack", 2 }
+        { "metallurgic-science-pack", 2 },
       },
       time = 60,
       count = 300
@@ -196,5 +190,38 @@ data:extend({
       { type = "unlock-recipe", recipe = "lava-to-quartz" },
       { type = "unlock-recipe", recipe = "lava-to-silicon" },
     },
+  },
+  { -- casting reinforced plates
+    type = "technology",
+    name = "cast-reinforced-plates-tech",
+    icons = {
+      {
+        icon = "__space-age__/graphics/technology/foundry.png",
+        icon_size = 256,
+        icon_mipmaps = 4,
+      },
+      {
+        icon = "__OCs_base_assets__/graphics/technology/overlayer-tech-kr-reinforced-plates.png",
+        icon_size = 256,
+        icon_mipmaps = 4,
+      }
+    },
+    prerequisites = { "casting-concrete-tech", "kr-reinforced-plates",  "metallurgic-science-pack" },
+    unit = {
+      ingredients = {
+        { "chemical-science-pack",    1 },
+        { "space-science-pack",       1 },
+        { "production-science-pack",  1 },
+        { "metallurgic-science-pack", 2 },
+      },
+      time = 60,
+      count = 250
+    },
+    effects = {
+      { type = "unlock-recipe", recipe = "oc-casting-kr-black-reinforced-plate" },
+      { type = "unlock-recipe", recipe = "oc-casting-kr-white-reinforced-plate" },
+    },
   }
 })
+-- if settings.startup[""]
+-- end
