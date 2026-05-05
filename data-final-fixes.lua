@@ -45,7 +45,7 @@ if settings.startup["complex-lava-mode"].value then
   -- List of recipes to modify
   local recipes_to_update = { -- melting recipes
     "stone-to-lava", -- base
-    "sand-to-lava", -- AAI Industry, K2SO, Maraxsis, Moshine
+    "sand-to-lava", -- AAI Industry, K2SO, Maraxsis, Moshine (they share a single recipe)
     "silica-sand-to-lava", -- Metal and Stars
   }
 
@@ -55,4 +55,4 @@ if settings.startup["complex-lava-mode"].value then
   end
 end
 
-oc_recipe.allow_productivity({ "casting-glass", "casting-stone-tablet","casting-kr-glass" })
+oc_recipe.allow_productivity({ "oc-casting-glass", "oc-casting-stone-tablet","oc-casting-kr-glass" })

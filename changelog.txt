@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.8.10
+Date: 2026-05-04
+  Bugfixes:
+    - Fixed that stone-to-lava and sand-to-lava recipes were not deactivated if setting "allow-stone-to-lava" was off.
+  Other:
+    - Changed order of all stone-to-lava, sand-to-lava and equivalents.
+---------------------------------------------------------------------------------------------------
 Version: 0.8.9
 Date: 2026-05-01
   Compatibility:

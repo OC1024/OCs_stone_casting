@@ -1,13 +1,17 @@
 local generator_api = require("__OCs_base_assets__.prototypes.utils.api")
 local oc_tech       = require("__OCs_base_assets__.prototypes.utils.oc_tech")
+local oc_recipe     = require("__OCs_base_assets__.prototypes.utils.oc_recipe")
+local constants     = require("prototypes.constants")
+local stone_amount  = constants.stone_amount
+local stone_energy  = constants.stone_energy -- crafting time
 
 data:extend({
-  {   -- lava to sand
+  { -- lava to sand
     type = "recipe",
     name = "lava-to-sand",
     icons = {
       {
-        icon = "__OCs_base_assets__/graphics/icons/sand.png",   -- sand icon stolen from Kastorio2.
+        icon = "__OCs_base_assets__/graphics/icons/sand.png", -- sand icon stolen from Kastorio2.
         icon_size = 64,
         icon_mipmaps = 4,
       },
@@ -19,12 +23,13 @@ data:extend({
     },
     category = "metallurgy",
     enabled = false,
-    energy_required = 24,                                                       --24 for 40 stone, 0.5*40 grinding sand (free)
+    energy_required = stone_amount * stone_energy,
+    --24 for 40 stone, 0.5*40 grinding sand (free)
     ingredients = {
-      { type = "fluid", name = "lava", amount = 400, fluidbox_multiplier = 4 }, -- 40 stone
+      { type = "fluid", name = "lava", amount = stone_amount * 10, fluidbox_multiplier = 4 },
     },
     results = {
-      { type = "item", name = "sand", amount = 80 }, -- 2sand per stone
+      { type = "item", name = "sand", amount = stone_amount * 2 }, -- 2sand per stone
     },
     allow_productivity = true,
     show_amount_in_title = false,
@@ -44,12 +49,13 @@ if settings.startup["allow-stone-to-lava"].value then
       subgroup = "vulcanus-processes",
       order = "a[melting]-a[lava-c]",
       enabled = false,
-      energy_required = 16,                                                   --twice as fast as stone-to-lava since sand is smaller
+      energy_required = 16,
+      --twice as fast as stone-to-lava since sand is smaller
       ingredients = {
         { type = "item", name = "sand", amount = 100, itembox_multiplyer = 4 }, -- 2sand per stone
       },
       results = {
-        { type = "fluid", name = "lava", amount = 250, fluidbox_multiplier = 4 }, -- 40stone/2 making it less efficient
+        { type = "fluid", name = "lava", amount = 250, fluidbox_multiplier = 4 }, -- halfed to reduce positive feedback
       },
       allow_productivity = false,
       show_amount_in_title = false,

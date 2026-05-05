@@ -6,40 +6,6 @@ for tech_name, _ in pairs(data.raw.technology) do
   end
 end
 
-if settings.startup["allow-stone-to-lava"].value then
-  data:extend({
-    { -- stone to lava
-      type = "recipe",
-      name = "silica-sand-to-lava",
-      category = "metallurgy",
-      icons = {
-        {
-          icon = "__space-age__/graphics/icons/fluid/lava.png",
-          icon_size = 64,
-          icon_mipmaps = 4,
-        },
-        {
-          icon = "__common-prototypes-graphics__/icons/items/silica-sand-1.png",
-          icon_size = 64,
-          icon_mipmaps = 4,
-          scale = 0.375,
-          shift = { 0, 32*0.375 } -- move to lower edge
-        },
-      },
-      enabled = false,
-      energy_required = 16,                                                            -- like other sand-to-lava, half of stone-to-lava
-      ingredients = {
-        { type = "item", name = "silica-sand", amount = 100, itembox_multiplyer = 4 }, -- 2sand per stone
-      },
-      results = {
-        { type = "fluid", name = "lava", amount = 250, fluidbox_multiplier = 4 }, -- 40stone/2 making it less efficient
-      },
-      allow_productivity = true,
-      show_amount_in_title = false,
-    },
-  })
-end
-
 data:extend({
   { -- lava to quartz-sand/silica-sand
     type = "recipe",
@@ -69,6 +35,44 @@ data:extend({
     show_amount_in_title = false,
   },
 })
+if settings.startup["allow-stone-to-lava"].value then
+  data:extend({
+    { -- stone to lava
+      type = "recipe",
+      name = "silica-sand-to-lava",
+      icons = {
+        {
+          icon = "__space-age__/graphics/icons/fluid/lava.png",
+          icon_size = 64,
+          icon_mipmaps = 4,
+        },
+        {
+          icon = "__common-prototypes-graphics__/icons/items/silica-sand-1.png",
+          icon_size = 64,
+          icon_mipmaps = 4,
+          scale = 0.375,
+          shift = { 0, 32*0.375 } -- move to lower edge
+        },
+      },
+      category = "metallurgy",
+      group = "intermediate-products",
+      subgroup = "vulcanus-processes",
+      order = "a[melting]-a[lava-c]-c",
+      enabled = false,
+      energy_required = 16,
+      -- like other sand-to-lava, half of stone-to-lava
+      ingredients = {
+        { type = "item", name = "silica-sand", amount = 100, itembox_multiplyer = 4 }, -- 2sand per stone
+      },
+      results = {
+        { type = "fluid", name = "lava", amount = 250, fluidbox_multiplier = 4 }, -- halfed to reduce positive feedback
+      },
+      allow_productivity = true,
+      show_amount_in_title = false,
+    },
+  })
+end
+
 local mapping = {
   ["lava-to-silica-sand"] = { "lava-to-stone-tech" },
   ["silica-sand-to-lava"] = { "lava-to-stone-tech" }, -- if existent
