@@ -21,10 +21,9 @@ data:extend({
     },
     icon_size = 64,
     icon_mipmaps = 4,
-    category = "metallurgy",
+    categories = { "metallurgy" },
     enabled = false,
     energy_required = stone_amount * stone_energy,
-    -- like the lava-to-metal: 10 liquid = 1 item. new time: 0.6 time per stone
     ingredients = {
       { type = "fluid", name = "lava", amount = stone_amount * 10, fluidbox_multiplier = 4 },
     },
@@ -49,10 +48,9 @@ data:extend({
         icon_mipmaps = 4,
       }
     },
-    category = "metallurgy",
+    categories = { "metallurgy" },
     enabled = false,
     energy_required = stone_amount * stone_energy,
-    -- like molten-metal-to-metal:  2stone to 1brick but 20x volume. new time: 20x0.6=12
     ingredients = {
       { type = "fluid", name = "lava", amount = stone_amount * 10, fluidbox_multiplier = 4 },
     },
@@ -70,13 +68,12 @@ if settings.startup["allow-stone-to-lava"].value then
       icon = "__OCs_stone_casting__/graphics/icons/lava-stone.png",
       icon_size = 64,
       icon_mipmaps = 4,
-      category = "metallurgy",
+      categories = { "metallurgy" },
       group = "intermediate-products",
       subgroup = "vulcanus-processes",
       order = "a[melting]-a[lava-c]-a",
       enabled = false,
-      energy_required = 32,
-      -- like melting ores
+      energy_required = 32, -- like melting ores
       ingredients = {
         { type = "item", name = "stone", amount = 50 },
       },

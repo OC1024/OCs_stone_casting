@@ -10,7 +10,7 @@ data:extend({
   { -- lava to quartz-sand/silica-sand
     type = "recipe",
     name = "lava-to-silica-sand",
-    category = "metallurgy",
+    categories = { "metallurgy" },
     icons = {
       {
         icon = "__common-prototypes-graphics__/icons/items/silica-sand-1.png",
@@ -54,7 +54,7 @@ if settings.startup["allow-stone-to-lava"].value then
           shift = { 0, 32*0.375 } -- move to lower edge
         },
       },
-      category = "metallurgy",
+      categories = { "metallurgy" },
       group = "intermediate-products",
       subgroup = "vulcanus-processes",
       order = "a[melting]-a[lava-c]-c",

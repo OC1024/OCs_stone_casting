@@ -21,7 +21,7 @@ data:extend({
         icon_mipmaps = 4,
       }
     },
-    category = "metallurgy",
+    categories = { "metallurgy" },
     enabled = false,
     energy_required = stone_amount * stone_energy,
     --24 for 40 stone, 0.5*40 grinding sand (free)
@@ -44,7 +44,7 @@ if settings.startup["allow-stone-to-lava"].value then
       icon = "__OCs_stone_casting__/graphics/icons/lava-sand.png",
       icon_size = 64,
       icon_mipmaps = 4,
-      category = "metallurgy",
+      categories = { "metallurgy" },
       group = "intermediate-products",
       subgroup = "vulcanus-processes",
       order = "a[melting]-a[lava-c]",
@@ -65,7 +65,14 @@ end
 
 -- add new alternative recipes for the generator to use
 local new_alt_recipes = {
-  ["sand"] = { "lava-to-sand", "sand" },
+  ["sand"] = {
+    [40] = "lava-to-sand",
+    [20] = "sand"
+  },
+  ["glass"] = {
+    [40] = "oc-casting-glass",
+    [20] = "glass",
+  }
 }
 generator_api.register_category_alt_recipes("metallurgy", new_alt_recipes)
 

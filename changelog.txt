@@ -1,4 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.9.0
+Date: 2026-06-28
+  Major Features:
+    - Updated to Factorio 2.1
+  Balancing:
+    - Made tech also require space scienc pack as ingredient and prerequirement. 
+  Compatibility:
+    - Updated dependency of [OCs Base Assets] to >=0.5.0, where helper functions were updated.
+    - [Any Planet Start] If starting on Vulcanus or Moshine, it rolls back to the original tech costs.
+---------------------------------------------------------------------------------------------------
 Version: 0.8.10
 Date: 2026-05-04
   Bugfixes:

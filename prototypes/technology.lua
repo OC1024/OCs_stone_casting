@@ -7,13 +7,14 @@ data:extend({
     icon = "__OCs_stone_casting__/graphics/icons/lava-stone.png",
     icon_size = 64,
     icon_mipmaps = 4,
-    prerequisites = { "foundry", "railway","landfill","advanced-material-processing" },
+    prerequisites = { "foundry", "railway", "landfill", "advanced-material-processing", "space-science-pack", "metallurgic-science-pack" },
     unit = {
       ingredients = {
-        { "automation-science-pack", 1 },
-        { "logistic-science-pack",   1 },
-        { "chemical-science-pack",   1 },
-        -- {"metallurgic-science-pack", 2}
+        { "automation-science-pack",  1 },
+        { "logistic-science-pack",    1 },
+        { "chemical-science-pack",    1 },
+        { "space-science-pack",        1 }, -- removed if correct starter planet
+        { "metallurgic-science-pack", 2 }, -- removed if correct starter planet
       },
       time = 30,
       count = 200
@@ -49,7 +50,8 @@ data:extend({
         { "automation-science-pack",  1 },
         { "logistic-science-pack",    1 },
         { "chemical-science-pack",    1 },
-        { "metallurgic-science-pack", 2 }
+        { "space-science-pack",       1 },  -- removed if correct starter planet
+        { "metallurgic-science-pack", 2 },  -- removed if correct starter planet
       },
       time = 60,
       count = 250
@@ -78,10 +80,12 @@ data:extend({
     prerequisites = { "lava-to-stone-tech", "gate" },
     unit = {
       ingredients = {
-        { "automation-science-pack", 1 },
-        { "logistic-science-pack",   1 },
-        { "chemical-science-pack",   1 },
-        { "military-science-pack",   2 }
+        { "automation-science-pack",  1 },
+        { "logistic-science-pack",    1 },
+        { "chemical-science-pack",    1 },
+        { "military-science-pack",    2 },
+        { "space-science-pack",       1 },  -- removed if correct starter planet
+        { "metallurgic-science-pack", 2 },  -- removed if correct starter planet
       },
       time = 45,
       count = 300

@@ -22,3 +22,7 @@ end
 if mods["Krastorio2-spaced-out"] then -- replaces normal Krastorio2 with space-age compatible version
   require("prototypes.compatibility.Krastorio2")
 end
+
+if mods["any-planet-start"] then
+  require("prototypes.compatibilty.any-planet-start") -- must be after most other mod patches
+end

@@ -20,11 +20,11 @@ local sand_energy         = stone_amount * stone_energy
 
 -- 0.6s*40 lava-to-sand, 2.1s*8 filtration = 40.8 (rounded to 40 to be nice)
 local quartz_amount       = sand_amount * quartz_per_sand
-local quartz_energy       = math.floor((sand_energy + sand_amount * filtration_per_sand)*10)/10
+local quartz_energy       = math.floor((sand_energy + sand_amount * filtration_per_sand) * 10) / 10
 
 -- 0.6s*40 lava-to-stone, 0.5*40 grinding sand(free), 2.1s*8 filtration, 16s*1.5smelting quartz = 64,8 (also rounded down)
 local silicon_amount      = quartz_amount * silicon_per_quartz
-local silicon_energy      = math.floor((quartz_energy + quartz_amount * smelting_per_quartz)*10)/10
+local silicon_energy      = math.floor((quartz_energy + quartz_amount * smelting_per_quartz) * 10) / 10
 
 
 data:extend({
@@ -44,10 +44,9 @@ data:extend({
         icon_mipmaps = 4,
       }
     },
-    category = "metallurgy",
+    categories = { "metallurgy" },
     enabled = false,
     energy_required = sand_energy,
-    --24 for 40 stone, 0.5*40 grinding sand (free)
     ingredients = {
       { type = "fluid", name = "lava", amount = stone_amount * 10, fluidbox_multiplier = 4 },
     },
@@ -73,9 +72,7 @@ data:extend({
         icon_mipmaps = 4,
       }
     },
-    icon_size = 64,
-    icon_mipmaps = 4,
-    category = "metallurgy",
+    categories = { "metallurgy" },
     enabled = false,
     energy_required = quartz_energy,
     ingredients = {
@@ -105,7 +102,7 @@ data:extend({
     },
     icon_size = 64,
     icon_mipmaps = 4,
-    category = "metallurgy",
+    categories = {"metallurgy"},
     enabled = false,
     energy_required = silicon_energy,
     ingredients = {
@@ -130,7 +127,7 @@ if settings.startup["allow-stone-to-lava"].value then
       icon = "__OCs_stone_casting__/graphics/icons/lava-sand.png",
       icon_size = 64,
       icon_mipmaps = 4,
-      category = "metallurgy",
+      categories = {"metallurgy"},
       group = "intermediate-products",
       subgroup = "vulcanus-processes",
       order = "a[melting]-a[lava-c]-b",
@@ -157,10 +154,22 @@ end
 
 -- register new recipes to Generator
 local new_alt_recipes = {
-  ["kr-sand"] = { "lava-to-sand", "kr-sand" },
-  ["kr-glass"] = { "oc-casting-kr-glass", "kr-glass" },
-  ["kr-quartz"] = { "lava-to-quartz", "kr-quarz" },
-  ["kr-silicon"] = { "lava-to-silicon", "kr-silicon" },
+  ["kr-sand"] = {
+    [50] = "lava-to-sand",
+    [30] = "kr-sand"
+  },
+  ["kr-glass"] = {
+    [50] = "oc-casting-kr-glass",
+    [30] = "kr-glass"
+  },
+  ["kr-quartz"] = {
+    [40] = "lava-to-quartz",
+    [20] = "kr-quarz"
+  },
+  ["kr-silicon"] = {
+    [40] = "lava-to-silicon",
+    [20] = "kr-silicon"
+  },
 }
 generator_api.register_category_alt_recipes("metallurgy", new_alt_recipes) -- check if correct usage
 
@@ -212,9 +221,9 @@ data:extend({
     unit = {
       ingredients = {
         { "chemical-science-pack",    1 },
-        { "space-science-pack",       1 },
+        { "space-science-pack",       1 }, -- removed if correct starter planet
         { "production-science-pack",  1 },
-        { "metallurgic-science-pack", 2 },
+        { "metallurgic-science-pack", 2 }, -- removed if correct starter planet
       },
       time = 60,
       count = 300
@@ -239,13 +248,13 @@ data:extend({
         icon_mipmaps = 4,
       }
     },
-    prerequisites = { "casting-concrete-tech", "kr-reinforced-plates", "metallurgic-science-pack" },
+    prerequisites = { "casting-concrete-tech", "kr-reinforced-plates", "space-science-pack", "metallurgic-science-pack" },
     unit = {
       ingredients = {
         { "chemical-science-pack",    1 },
-        { "space-science-pack",       1 },
+        { "space-science-pack",       1 }, -- removed if correct starter planet
         { "production-science-pack",  1 },
-        { "metallurgic-science-pack", 2 },
+        { "metallurgic-science-pack", 2 }, -- removed if correct starter planet
       },
       time = 60,
       count = 250
@@ -256,5 +265,3 @@ data:extend({
     },
   }
 })
--- if settings.startup[""]
--- end
