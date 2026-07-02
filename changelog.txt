@@ -1,13 +1,15 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.0
-Date: 2026-06-28
+Date: 2026-07-02
   Major Features:
     - Updated to Factorio 2.1
   Balancing:
-    - Made tech also require space scienc pack as ingredient and prerequirement. 
+    - Made this mod's tech also require space scienc pack as ingredient and prerequirement.
+    - [K2SO] Fixed that sand-to-lava required 100 instead of 125 sand, given that 2.5 sand equal one stone.
   Compatibility:
     - Updated dependency of [OCs Base Assets] to >=0.5.0, where helper functions were updated.
-    - [Any Planet Start] If starting on Vulcanus or Moshine, it rolls back to the original tech costs.
+    - [Any Planet Start] If starting on Vulcanus or Moshine, it rolls back to the original tech costs of the rebalance.
+    - [Muluna] compatibility added.
 ---------------------------------------------------------------------------------------------------
 Version: 0.8.10
 Date: 2026-05-04

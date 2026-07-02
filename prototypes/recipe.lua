@@ -92,7 +92,7 @@ local generator_api = require("__OCs_base_assets__.prototypes.utils.api")
 -- create new recipes
 local casting_dict = {
   ["stone-wall"] = "metallurgy",
-  ["concrete"] = "metallurgy",
+  ["concrete-from-molten-iron"] = "metallurgy",
   ["refined-concrete"] = "metallurgy",
   ["landfill"] = "metallurgy",
   ["foundation"] = "metallurgy",
@@ -104,3 +104,6 @@ local casting_dict = {
 generator_api.batch_generator(casting_dict)
 
 data.raw.recipe["oc-casting-foundation"].surface_conditions = { { property = "pressure", min = 4000, max = 4000 } } -- Vulcanus only
+
+-- push it back to the normal concret recipe instead of the vulcanus recipe
+oc_recipe.change_recipes_subgroup({["oc-casting-concrete-from-molten-iron"] = "terrain"})

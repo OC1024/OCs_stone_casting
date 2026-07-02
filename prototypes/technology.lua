@@ -1,5 +1,6 @@
 local oc_tech = require("__OCs_base_assets__.prototypes.utils.oc_tech")
 
+-- new techs
 data:extend({
   { -- lava-to-stone
     type = "technology",
@@ -57,7 +58,7 @@ data:extend({
       count = 250
     },
     effects = {
-      { type = "unlock-recipe", recipe = "oc-casting-concrete" },
+      { type = "unlock-recipe", recipe = "oc-casting-concrete-from-molten-iron" },
       { type = "unlock-recipe", recipe = "oc-casting-refined-concrete" }
     },
   },

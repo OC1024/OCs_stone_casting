@@ -135,7 +135,7 @@ if settings.startup["allow-stone-to-lava"].value then
       energy_required = 16,
       --twice as fast as stone-to-lava since sand is smaller
       ingredients = {
-        { type = "item", name = "kr-sand", amount = 100, itembox_multiplyer = 4 }, -- 2.5sand per stone ( 7-8sand per 2stone)
+        { type = "item", name = "kr-sand", amount = 50*2.5, itembox_multiplyer = 4 }, -- 2.5sand per stone ( 7-8sand per 2stone)
       },
       results = {
         { type = "fluid", name = "lava", amount = 250, fluidbox_multiplier = 4 }, -- halfed to reduce positive feedback

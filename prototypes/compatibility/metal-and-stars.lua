@@ -62,7 +62,7 @@ if settings.startup["allow-stone-to-lava"].value then
       energy_required = 16,
       -- like other sand-to-lava, half of stone-to-lava
       ingredients = {
-        { type = "item", name = "silica-sand", amount = 100, itembox_multiplyer = 4 }, -- 2sand per stone
+        { type = "item", name = "silica-sand", amount = 50*2, itembox_multiplyer = 4 }, -- 2sand per stone
       },
       results = {
         { type = "fluid", name = "lava", amount = 250, fluidbox_multiplier = 4 }, -- halfed to reduce positive feedback
