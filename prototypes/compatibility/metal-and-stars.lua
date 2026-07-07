@@ -1,4 +1,7 @@
 local oc_tech = require("__OCs_base_assets__.prototypes.utils.oc_tech")
+local constants     = require("prototypes.utils.constants")
+local stone_amount  = constants.stone_amount
+local stone_energy  = constants.stone_energy -- crafting time
 
 for tech_name, _ in pairs(data.raw.technology) do
   if string.match(tech_name, "^railgun%-ammo%-productivity%-?%d*$") then
@@ -24,12 +27,12 @@ data:extend({
       }
     },
     enabled = false,
-    energy_required = 24, -- like the other lava-to-sand recipes
+    energy_required = stone_amount * stone_energy, -- like the other lava-to-sand recipes
     ingredients = {
-      { type = "fluid", name = "lava", amount = 400, fluidbox_multiplier = 4 },
+      { type = "fluid", name = "lava", amount = stone_amount * 10, fluidbox_multiplier = 4 },
     },
     results = {
-      { type = "item", name = "silica-sand", amount = 80 }, -- guess like aai sand
+      { type = "item", name = "silica-sand", amount = stone_amount * 2 }, -- guess like aai sand
     },
     allow_productivity = true,
     show_amount_in_title = false,

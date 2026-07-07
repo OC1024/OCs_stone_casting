@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.9.1
+Date: 2026-07-07
+  Bugfixes:
+    - Fixed start-up error with [Any Planet Start].
+    - Updated dependency of [OCs Base Assets] to >=0.5.2.
+    - [Moshine] compatibility was not active.
+    - Added chemical science pack as prerequisites for casting lava. This mainly is relevant for the case if Vulcanus is a starter planet.
+---------------------------------------------------------------------------------------------------
 Version: 0.9.0
 Date: 2026-07-02
   Major Features:

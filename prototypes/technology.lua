@@ -8,7 +8,7 @@ data:extend({
     icon = "__OCs_stone_casting__/graphics/icons/lava-stone.png",
     icon_size = 64,
     icon_mipmaps = 4,
-    prerequisites = { "foundry", "railway", "landfill", "advanced-material-processing", "space-science-pack", "metallurgic-science-pack" },
+    prerequisites = { "foundry", "railway", "landfill", "advanced-material-processing", "chemical-science-pack", "space-science-pack", "metallurgic-science-pack" },
     unit = {
       ingredients = {
         { "automation-science-pack",  1 },

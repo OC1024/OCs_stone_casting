@@ -1,7 +1,7 @@
 local generator_api = require("__OCs_base_assets__.prototypes.utils.api")
 local oc_tech       = require("__OCs_base_assets__.prototypes.utils.oc_tech")
 local oc_recipe     = require("__OCs_base_assets__.prototypes.utils.oc_recipe")
-local constants     = require("prototypes.constants")
+local constants     = require("prototypes.utils.constants")
 local stone_amount  = constants.stone_amount
 local stone_energy  = constants.stone_energy -- crafting time
 
@@ -70,6 +70,10 @@ local new_alt_recipes = {
     [40] = "lava-to-sand",
     [20] = "sand"
   },
+  ["glass"] = {
+    [40] = "oc-casting-glass",
+    [20] = "glass",
+  }
 }
 generator_api.register_category_alt_recipes("metallurgy", new_alt_recipes)
 generator_api.register_alt_recipe_entry("metallurgy", "concrete", "concrete-from-molten-iron-and-sand", 30) -- between standard recipe and Vulcanus recipe

@@ -1,7 +1,7 @@
 local generator_api       = require("__OCs_base_assets__.prototypes.utils.api")
 local oc_tech             = require("__OCs_base_assets__.prototypes.utils.oc_tech")
 local oc_recipe           = require("__OCs_base_assets__.prototypes.utils.oc_recipe")
-local constants           = require("prototypes.constants")
+local constants           = require("prototypes.utils.constants")
 local stone_amount        = constants.stone_amount
 local stone_energy        = constants.stone_energy -- crafting time per item
 
@@ -102,7 +102,7 @@ data:extend({
     },
     icon_size = 64,
     icon_mipmaps = 4,
-    categories = {"metallurgy"},
+    categories = { "metallurgy" },
     enabled = false,
     energy_required = silicon_energy,
     ingredients = {
@@ -127,7 +127,7 @@ if settings.startup["allow-stone-to-lava"].value then
       icon = "__OCs_stone_casting__/graphics/icons/lava-sand.png",
       icon_size = 64,
       icon_mipmaps = 4,
-      categories = {"metallurgy"},
+      categories = { "metallurgy" },
       group = "intermediate-products",
       subgroup = "vulcanus-processes",
       order = "a[melting]-a[lava-c]-b",
@@ -135,7 +135,7 @@ if settings.startup["allow-stone-to-lava"].value then
       energy_required = 16,
       --twice as fast as stone-to-lava since sand is smaller
       ingredients = {
-        { type = "item", name = "kr-sand", amount = 50*2.5, itembox_multiplyer = 4 }, -- 2.5sand per stone ( 7-8sand per 2stone)
+        { type = "item", name = "kr-sand", amount = 50 * 2.5, itembox_multiplyer = 4 }, -- 2.5sand per stone ( 7-8sand per 2stone)
       },
       results = {
         { type = "fluid", name = "lava", amount = 250, fluidbox_multiplier = 4 }, -- halfed to reduce positive feedback

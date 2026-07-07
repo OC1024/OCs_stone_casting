@@ -1,7 +1,7 @@
 local generator_api = require("__OCs_base_assets__.prototypes.utils.api")
 local oc_tech       = require("__OCs_base_assets__.prototypes.utils.oc_tech")
 local oc_recipe     = require("__OCs_base_assets__.prototypes.utils.oc_recipe")
-local constants     = require("prototypes.constants")
+local constants     = require("prototypes.utils.constants")
 local stone_amount  = constants.stone_amount
 local stone_energy  = constants.stone_energy -- crafting time
 

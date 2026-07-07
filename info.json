@@ -1,6 +1,6 @@
 {
   "name": "OCs_stone_casting",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "title": "OCs Stone Casting",
   "author": "OC1024",
   "space_travel_required": true,
@@ -9,9 +9,9 @@
   "dependencies": [
     "base >= 2.1",
     "space-age",
-    "OCs_base_assets >= 0.5.0",
+    "OCs_base_assets >= 0.5.2",
     "? Krastorio2-spaced-out >= 1.4.0",
-    "? aai-industry >= 0.6.0",
+    "? aai-industry",
     "? landfill-productivity",
     "? foundation-productivity",
     "? concrete-productivity",
