@@ -1,7 +1,10 @@
-local oc_tech = require("__OCs_base_assets__.prototypes.utils.oc_tech")
-local constants     = require("prototypes.utils.constants")
-local stone_amount  = constants.stone_amount
-local stone_energy  = constants.stone_energy -- crafting time
+local oc_tech      = require("__OCs_base_assets__.prototypes.utils.oc_tech")
+local constants    = require("prototypes.utils.constants")
+local stone_amount = constants.stone_amount
+local stone_energy = constants.stone_energy       -- crafting time per item
+local melt_amount  = constants.melting_amount     -- stone per melting cycle
+local melt_energy  = constants.melting_energy     -- crafting time per item
+local melt_eff     = constants.melting_efficiency -- nerfing factor
 
 for tech_name, _ in pairs(data.raw.technology) do
   if string.match(tech_name, "^railgun%-ammo%-productivity%-?%d*$") then
@@ -54,7 +57,7 @@ if settings.startup["allow-stone-to-lava"].value then
           icon_size = 64,
           icon_mipmaps = 4,
           scale = 0.375,
-          shift = { 0, 32*0.375 } -- move to lower edge
+          shift = { 0, 32 * 0.375 } -- move to lower edge
         },
       },
       categories = { "metallurgy" },
@@ -62,13 +65,13 @@ if settings.startup["allow-stone-to-lava"].value then
       subgroup = "vulcanus-processes",
       order = "a[melting]-a[lava-c]-c",
       enabled = false,
-      energy_required = 16,
+      energy_required = melt_amount * melt_energy * 0.5,
       -- like other sand-to-lava, half of stone-to-lava
       ingredients = {
-        { type = "item", name = "silica-sand", amount = 50*2, itembox_multiplyer = 4 }, -- 2sand per stone
+        { type = "item", name = "silica-sand", amount = melt_amount * 2, itembox_multiplyer = 4 }, -- 2sand per stone
       },
       results = {
-        { type = "fluid", name = "lava", amount = 250, fluidbox_multiplier = 4 }, -- halfed to reduce positive feedback
+        { type = "fluid", name = "lava", amount = melt_amount * 10 * melt_eff, fluidbox_multiplier = 4 },
       },
       allow_productivity = true,
       show_amount_in_title = false,

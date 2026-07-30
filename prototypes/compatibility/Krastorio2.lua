@@ -4,6 +4,9 @@ local oc_recipe           = require("__OCs_base_assets__.prototypes.utils.oc_rec
 local constants           = require("prototypes.utils.constants")
 local stone_amount        = constants.stone_amount
 local stone_energy        = constants.stone_energy -- crafting time per item
+local melt_amount         = constants.melting_amount -- stone per melting cycle
+local melt_energy         = constants.melting_energy -- crafting time per item
+local melt_eff            = constants.melting_efficiency -- nerfing factor
 
 -- energy and results calculation:
 -- per item definitions
@@ -22,7 +25,7 @@ local sand_energy         = stone_amount * stone_energy
 local quartz_amount       = sand_amount * quartz_per_sand
 local quartz_energy       = math.floor((sand_energy + sand_amount * filtration_per_sand) * 10) / 10
 
--- 0.6s*40 lava-to-stone, 0.5*40 grinding sand(free), 2.1s*8 filtration, 16s*1.5smelting quartz = 64,8 (also rounded down)
+-- 0.6s*40 lava-to-stone, 0.5*40 grinding sand(free), 2.1s*8 filtration, 16s*1.5smelting quartz = 64,8 (also rounded down to 64)
 local silicon_amount      = quartz_amount * silicon_per_quartz
 local silicon_energy      = math.floor((quartz_energy + quartz_amount * smelting_per_quartz) * 10) / 10
 
@@ -111,7 +114,6 @@ data:extend({
     },
     results = {
       { type = "item", name = "kr-silicon", amount = silicon_amount },
-      -- 80 sand, 10sand too 6quartz, 18quartz to 9 silicon,
     },
     allow_productivity = true,
     show_amount_in_title = false,
@@ -132,13 +134,13 @@ if settings.startup["allow-stone-to-lava"].value then
       subgroup = "vulcanus-processes",
       order = "a[melting]-a[lava-c]-b",
       enabled = false,
-      energy_required = 16,
+      energy_required = melt_amount * melt_energy * 0.5,
       --twice as fast as stone-to-lava since sand is smaller
       ingredients = {
-        { type = "item", name = "kr-sand", amount = 50 * 2.5, itembox_multiplyer = 4 }, -- 2.5sand per stone ( 7-8sand per 2stone)
+        { type = "item", name = "kr-sand", amount = melt_amount * 2.5, itembox_multiplyer = 4 }, -- 2.5sand per stone ( 7-8sand per 2stone)
       },
       results = {
-        { type = "fluid", name = "lava", amount = 250, fluidbox_multiplier = 4 }, -- halfed to reduce positive feedback
+        { type = "fluid", name = "lava", amount = melt_amount * 10 * melt_eff, fluidbox_multiplier = 4 },
       },
       allow_productivity = false,
       show_amount_in_title = false,

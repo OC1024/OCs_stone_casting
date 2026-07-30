@@ -3,11 +3,14 @@ local oc_tech       = require("__OCs_base_assets__.prototypes.utils.oc_tech")
 local oc_recipe     = require("__OCs_base_assets__.prototypes.utils.oc_recipe")
 local constants     = require("prototypes.utils.constants")
 local stone_amount  = constants.stone_amount
-local stone_energy  = constants.stone_energy -- crafting time
+local stone_energy  = constants.stone_energy      -- crafting time per item
+local melt_amount   = constants.melting_amount    -- stone per melting cycle
+local melt_energy   = constants.melting_energy    -- crafting time per item
+local melt_eff      = constants.melting_efficiency -- nerfing factor
 
 data:extend({
   { -- lava to sand
-  -- copied from aai industry as it is the same prototype
+    -- copied from aai industry as it is the same prototype
     type = "recipe",
     name = "lava-to-sand",
     icons = {
@@ -35,6 +38,7 @@ data:extend({
     show_amount_in_title = false,
   },
 })
+
 if settings.startup["allow-stone-to-lava"].value then
   data:extend({
     { -- sand to lava
@@ -48,13 +52,13 @@ if settings.startup["allow-stone-to-lava"].value then
       subgroup = "vulcanus-processes",
       order = "a[melting]-a[lava-c]-b",
       enabled = false,
-      energy_required = 16,
+      energy_required = melt_amount * melt_energy * 0.5,
       --twice as fast as stone-to-lava since sand is smaller
       ingredients = {
-        { type = "item", name = "sand", amount = 50*2, itembox_multiplyer = 4 }, -- 2sand per stone
+        { type = "item", name = "sand", amount = melt_amount * 2, itembox_multiplyer = 4 }, -- 2sand per stone
       },
       results = {
-        { type = "fluid", name = "lava", amount = 250, fluidbox_multiplier = 4 }, -- halfed to reduce positive feedback
+        { type = "fluid", name = "lava", amount = melt_amount * 10 * melt_eff, fluidbox_multiplier = 4 },
       },
       allow_productivity = false,
       show_amount_in_title = false,

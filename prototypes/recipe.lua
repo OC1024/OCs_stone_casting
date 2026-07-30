@@ -1,7 +1,11 @@
-local oc_recipe    = require("__OCs_base_assets__.prototypes.utils.oc_recipe")
-local constants    = require("prototypes.utils.constants")
-local stone_amount = constants.stone_amount
-local stone_energy = constants.stone_energy -- crafting time
+local generator_api = require("__OCs_base_assets__.prototypes.utils.api")
+local oc_recipe     = require("__OCs_base_assets__.prototypes.utils.oc_recipe")
+local constants     = require("prototypes.utils.constants")
+local stone_amount  = constants.stone_amount
+local stone_energy  = constants.stone_energy      -- crafting time per item
+local melt_amount   = constants.melting_amount    -- stone per melting cycle
+local melt_energy   = constants.melting_energy    -- crafting time per item
+local melt_eff      = constants.melting_efficiency -- nerfing factor
 
 data:extend({
   { -- lava to stone
@@ -73,21 +77,18 @@ if settings.startup["allow-stone-to-lava"].value then
       subgroup = "vulcanus-processes",
       order = "a[melting]-a[lava-c]-a",
       enabled = false,
-      energy_required = 32, -- like melting ores
+      energy_required = melt_amount * melt_energy,
       ingredients = {
-        { type = "item", name = "stone", amount = 50 },
+        { type = "item", name = "stone", amount = melt_amount },
       },
       results = {
-        { type = "fluid", name = "lava", amount = 250 }, -- halfed to reduce positive feedback
+        { type = "fluid", name = "lava", amount = melt_amount * 10 * melt_eff },
       },
       allow_productivity = false,
       show_amount_in_title = false,
     },
   })
 end
-
--- pepare the generator
-local generator_api = require("__OCs_base_assets__.prototypes.utils.api")
 
 -- create new recipes
 local casting_dict = {
@@ -106,4 +107,4 @@ generator_api.batch_generator(casting_dict)
 data.raw.recipe["oc-casting-foundation"].surface_conditions = { { property = "pressure", min = 4000, max = 4000 } } -- Vulcanus only
 
 -- push it back to the normal concret recipe instead of the vulcanus recipe
-oc_recipe.change_recipes_subgroup({["oc-casting-concrete-from-molten-iron"] = "terrain"})
+oc_recipe.change_recipes_subgroup({ ["oc-casting-concrete-from-molten-iron"] = "terrain" })
