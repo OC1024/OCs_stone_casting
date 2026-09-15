@@ -3,6 +3,8 @@ Version: 0.9.3
 Date: 2026-09-02
   Translation:
     - Updated translations from Crowdin.
+  Compatibility:
+    - Updated dependency of [OCs Base Assets] to >=0.6.0, where helper functions were updated and calculation errors were fixed.
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.2
 Date: 2026-07-30
@@ -10,7 +12,7 @@ Date: 2026-07-30
     - Added user setting for the melting efficiency. Previous 50%, now 25%, see changes.
   Changes:
     - Nerfed all stone/sand to lava recipes by 50% (aka. instead of 250 lava, now 125 lava per 50 stone).
-      This should help to avoid a positive feedback loop and instead be a net-zero-loop.
+      This should help to avoid a positive feedback loop and instead aims to be a net-zero-loop.
   Translation:
     - Addded russian localisation by chudotvoretz.
     - Slightly changed the en/de localisation regarding the mod settings.
