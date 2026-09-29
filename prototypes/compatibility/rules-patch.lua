@@ -2,15 +2,7 @@
 local generator_api = require("__OCs_base_assets__.prototypes.utils.api")
 
 -- register lava as a fluid overlayer
-local fluid_overlayer = {
-  ["lava"] = {
-    icon = "__OCs_base_assets__/graphics/icons/overlayer-recipe-lava.png",
-    icon_size = 64,
-    icon_mipmaps = 4,
-    priority = 6,
-  }
-}
-generator_api.register_fluid_overlays(fluid_overlayer)
+-- done in base assets
 
 -- register new alt recipes
 local new_alt_recipes = {

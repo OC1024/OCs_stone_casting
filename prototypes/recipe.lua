@@ -108,3 +108,27 @@ data.raw.recipe["oc-casting-foundation"].surface_conditions = { { property = "pr
 
 -- push it back to the normal concret recipe instead of the vulcanus recipe
 oc_recipe.change_recipes_subgroup({ ["oc-casting-concrete-from-molten-iron"] = "terrain" })
+
+-- use the other icon stack (not the DLC base icon)
+local new_icons = {
+  {
+    icon = "__base__/graphics/icons/concrete.png",
+    icon_size = 64,
+    icon_mipmaps = 4,
+  },
+  {
+    icon = "__base__/graphics/icons/fluid/water.png",
+    icon_size = 64,
+    icon_mipmaps = 2,
+    scale = 0.25,
+    shift = { -8, -8 },
+  },
+  {
+    icon = "__space-age__/graphics/icons/fluid/lava.png",
+    icon_size = 64,
+    icon_mipmaps = 4,
+    scale = 0.25,
+    shift = { -4, -8 },
+  },
+}
+data.raw.recipe["oc-casting-concrete-from-molten-iron"].icons = new_icons
