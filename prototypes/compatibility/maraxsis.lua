@@ -20,9 +20,11 @@ data:extend({
         icon_mipmaps = 4,
       },
       {
-        icon = "__OCs_base_assets__/graphics/icons/overlayer-recipe-lava-droplet.png",
+        icon = "__space-age__/graphics/icons/fluid/lava.png",
         icon_size = 64,
         icon_mipmaps = 4,
+        scale = 0.25,
+        shift = { -4, -8 },
       }
     },
     categories = { "metallurgy" },

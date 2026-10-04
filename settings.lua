@@ -27,7 +27,7 @@ data:extend({
     name = "complex-lava-mode",
     setting_type = "startup",
     order = "y",
-    default_value = false
+    default_value = true
   },
   {
     type = "bool-setting",

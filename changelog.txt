@@ -1,12 +1,16 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.3
-Date: 2026-09-23
+Date: 2026-10-04
   Translation:
     - Updated translations from Crowdin.
   Compatibility:
     - Updated dependency of [OCs Base Assets] to >=0.6.0, where helper functions were updated and calculation errors were fixed.
+  Graphics:
+    - Changed icon paths to use DLC icons instead of base assets.
+  Changes:
+    - Set the Complex Lava mode to be enabled by default.
   Bugfixes:
-    - Manually override the icon for casting concrete recipe.
+    - Manually override the icon for casting concrete recipe. (Using standard concrete icon instead of the Space Age icon.)
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.2
 Date: 2026-07-30

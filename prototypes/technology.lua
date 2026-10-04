@@ -39,10 +39,11 @@ data:extend({
         icon_mipmaps = 4,
       },
       {
-        icon = "__OCs_base_assets__/graphics/icons/overlayer-recipe-lava-droplet.png",
+        icon = "__space-age__/graphics/icons/fluid/lava.png",
         icon_size = 64,
         icon_mipmaps = 4,
-        icon_scale = 4,
+        scale = 1,
+        shift = { 32, -32 },
       }
     },
     prerequisites = { "lava-to-stone-tech", "concrete" }, -- concrete is already, indirectly, a prerequisit.
@@ -72,10 +73,11 @@ data:extend({
         icon_mipmaps = 4,
       },
       {
-        icon = "__OCs_base_assets__/graphics/icons/overlayer-recipe-lava-droplet.png",
+        icon = "__space-age__/graphics/icons/fluid/lava.png",
         icon_size = 64,
         icon_mipmaps = 4,
-        icon_scale = 4,
+        scale = 1,
+        shift = { 32, -32 },
       }
     },
     prerequisites = { "lava-to-stone-tech", "gate" },
@@ -119,10 +121,11 @@ if settings.startup["allow-casting-foundation"].value then
           icon_mipmaps = 4,
         },
         {
-          icon = "__OCs_base_assets__/graphics/icons/overlayer-recipe-lava-droplet.png",
+          icon = "__space-age__/graphics/icons/fluid/lava.png",
           icon_size = 64,
           icon_mipmaps = 4,
-          icon_scale = 4,
+          scale = 1,
+          shift = { 32, -32 },
         }
       },
       icon_size = 256,

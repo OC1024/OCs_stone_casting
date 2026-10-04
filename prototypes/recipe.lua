@@ -18,9 +18,11 @@ data:extend({
         icon_mipmaps = 4,
       },
       {
-        icon = "__OCs_base_assets__/graphics/icons/overlayer-recipe-lava-droplet.png",
+        icon = "__space-age__/graphics/icons/fluid/lava.png",
         icon_size = 64,
         icon_mipmaps = 4,
+        scale = 0.25,
+        shift = { -4, -8 },
       }
     },
     icon_size = 64,
@@ -47,9 +49,11 @@ data:extend({
         icon_mipmaps = 4,
       },
       {
-        icon = "__OCs_base_assets__/graphics/icons/overlayer-recipe-lava-droplet.png",
+        icon = "__space-age__/graphics/icons/fluid/lava.png",
         icon_size = 64,
         icon_mipmaps = 4,
+        scale = 0.25,
+        shift = { -4, -8 },
       }
     },
     categories = { "metallurgy" },
@@ -104,7 +108,8 @@ local casting_dict = {
 }
 generator_api.batch_generator(casting_dict)
 
-data.raw.recipe["oc-casting-foundation"].surface_conditions = { { property = "pressure", min = 4000, max = 4000 } } -- Vulcanus only
+-- set oc-casting foundation to Vulcanus only
+data.raw.recipe["oc-casting-foundation"].surface_conditions = { { property = "pressure", min = 4000, max = 4000 } }
 
 -- push it back to the normal concret recipe instead of the vulcanus recipe
 oc_recipe.change_recipes_subgroup({ ["oc-casting-concrete-from-molten-iron"] = "terrain" })
