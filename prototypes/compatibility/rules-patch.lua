@@ -45,4 +45,4 @@ local new_alt_recipes = {
 generator_api.register_category_alt_recipes("metallurgy", new_alt_recipes)
 
 -- remove stone from blacklist, as we can make it from lava now
-generator_api.unregister_item_blacklist("metallurgy", { "stone" })
+generator_api.unregister_item_blacklist("metallurgy", { "stone", "sand", "kr-sand" })

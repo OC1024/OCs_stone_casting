@@ -36,6 +36,10 @@ if mods["aai-industry"] then
   require("prototypes.compatibility.aai-industry")
 end
 
+if mods["bobwarfare"] then
+  require("prototypes.compatibility.bobwarfare")
+end
+
 if mods["Krastorio2-spaced-out"] then -- replaces normal Krastorio2 with space-age compatible version
   require("prototypes.compatibility.Krastorio2")
 end
