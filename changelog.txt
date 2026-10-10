@@ -6,6 +6,7 @@ Date: 2026-10-04
   Compatibility:
     - Updated dependency of [OCs Base Assets] to >=0.6.0, where helper functions were updated and calculation errors were fixed.
     - Added [Bob Warfare] compatibility, just casting reinforced walls.
+    - Added [Crushing Industry] compatibility: Casting of glass and sand.
   Graphics:
     - Changed icon paths to use DLC icons instead of base assets.
   Changes:

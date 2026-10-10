@@ -36,6 +36,10 @@ if mods["aai-industry"] then
   require("prototypes.compatibility.aai-industry")
 end
 
+if mods["crushing-industry"] then
+  require("prototypes.compatibility.crushing-industry")
+end
+
 if mods["bobwarfare"] then
   require("prototypes.compatibility.bobwarfare")
 end

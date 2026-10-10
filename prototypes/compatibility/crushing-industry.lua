@@ -74,31 +74,50 @@ local new_alt_recipes = {
     [40] = "lava-to-sand",
     [20] = "sand"
   },
-  ["glass"] = {
-    [40] = "oc-casting-glass",
-    [20] = "glass",
-  }
 }
 generator_api.register_category_alt_recipes("metallurgy", new_alt_recipes)
 
--- create new recipes
-local casting_dict = {
-  ["stone-wall"] = "metallurgy", -- overwrite vanilla version
-  ["gate"] = "metallurgy",       -- overwrite vanilla version
-  ["concrete-wall"] = "metallurgy",
-  ["concrete-gate"] = "metallurgy",
-  ["steel-wall"] = "metallurgy",
-  ["steel-gate"] = "metallurgy",
-  ["stone-tablet"] = "metallurgy",
-  ["glass"] = "metallurgy",
-}
-generator_api.batch_generator(casting_dict)
-
--- remove and add recipes from techs
-local new_prereq = {
-  ["casting-wall-tech"] = { "steel-gates", "steel-walls", "casting-concrete-tech" }, -- since the concrete wall needs concrete
-}
-oc_tech.add_prerequisites(new_prereq)
+if settings.startup["crushing-industry-glass"].value then
+  -- [[
+  data:extend({
+    {
+      type = "recipe",
+      name = "molten-glass-from-lava",
+      icons = {
+        {
+          icon = "__crushing-industry__/graphics/icons/glass.png",
+          size = 64,
+        },
+        {
+          icon = "__crushing-industry__/graphics/icons/fluid/molten-glass.png",
+          size = 64,
+          scale = 0.25,
+          shift = { -4, 8 },
+        },
+      },
+      categories = { "metallurgy" },
+      enabled = false,
+      energy_required = stone_amount * stone_energy,
+      ingredients = {
+        { type = "fluid", name = "lava", amount = stone_amount * 10, fluidbox_multiplier = 4 },
+        { type = "item", name = "calcite", amount = 1, },
+      },
+      results = {
+        { type = "item", name = "glass", amount = stone_amount * 0.8 },
+        -- 2glass per 5sand, 2sand per 1stone is 0.4 * 2 = 0.8.
+        -- their calculating suggest 75sand to 25glass;
+      },
+      allow_productivity = true,
+      show_amount_in_title = true,
+    }
+  })
+  -- ]]
+  local casting_dict  = {
+    ["glass"] = "metallurgy", -- I could do that manually
+  }
+  generator_api.batch_generator(casting_dict)
+  oc_recipe.add_ingredient("oc-casting-glass","item", "calcite", 1)
+end
 
 -- add recipes to technology
 local mapping = {
@@ -106,15 +125,6 @@ local mapping = {
     "lava-to-sand",
     "sand-to-lava",
     "oc-casting-glass",
-    "oc-casting-stone-tablet",
-  },
-  ["casting-wall-tech"] = {  -- if existent
-    "oc-casting-stone-wall", -- already there
-    "oc-casting-stone-gate", -- already there
-    "oc-casting-concrete-wall",
-    "oc-casting-concrete-gate",
-    "oc-casting-steel-wall",
-    "oc-casting-steel-gate",
   },
 }
 oc_tech.add_tech_unlocks(mapping)

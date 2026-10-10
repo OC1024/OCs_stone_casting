@@ -82,7 +82,6 @@ if settings.startup["allow-stone-to-lava"].value then
 end
 
 local mapping = {
-  ["lava-to-silica-sand"] = { "lava-to-stone-tech" },
-  ["silica-sand-to-lava"] = { "lava-to-stone-tech" }, -- if existent
+  ["lava-to-stone-tech"] = { "lava-to-silica-sand", "silica-sand-to-lava", },-- if existent
 }
-oc_tech.add_recipe_unlocks(mapping)
+oc_tech.add_tech_unlocks(mapping)
