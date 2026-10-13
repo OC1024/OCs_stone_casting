@@ -1,6 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.4
 Date: 2026-10-13
+  Translation:
+    - Updated translations from Crowdin.
   Changes:
     - [Crushing Industry] Recipe molten glass from lava was unlockable (and missed localisation). The duplicate recipe was merged.
 ---------------------------------------------------------------------------------------------------
