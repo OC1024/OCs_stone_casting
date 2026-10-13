@@ -78,7 +78,6 @@ local new_alt_recipes = {
 generator_api.register_category_alt_recipes("metallurgy", new_alt_recipes)
 
 if settings.startup["crushing-industry-glass"].value then
-  -- [[
   data:extend({
     {
       type = "recipe",
@@ -111,12 +110,6 @@ if settings.startup["crushing-industry-glass"].value then
       show_amount_in_title = true,
     }
   })
-  -- ]]
-  local casting_dict  = {
-    ["glass"] = "metallurgy", -- I could do that manually
-  }
-  generator_api.batch_generator(casting_dict)
-  oc_recipe.add_ingredient("oc-casting-glass","item", "calcite", 1)
 end
 
 -- add recipes to technology
@@ -124,7 +117,7 @@ local mapping = {
   ["lava-to-stone-tech"] = { -- if existent
     "lava-to-sand",
     "sand-to-lava",
-    "oc-casting-glass",
+    "molten-glass-from-lava",
   },
 }
 oc_tech.add_tech_unlocks(mapping)
